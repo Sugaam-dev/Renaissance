@@ -1,0 +1,100 @@
+/* AppLayout.css */
+
+.layout-container {
+    position: relative; 
+    min-height: 100vh;
+}
+
+/* --- CRITICAL HEADER OVERLAY STYLING --- */
+.header-overlay {
+    /* Use 'fixed' to keep headers visible when scrolling, matching the design. */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    /* Must be higher than any other element */
+    z-index: 1050; 
+    background-color: transparent; 
+}
+
+
+
+/* --- MAIN PAGE CONTENT --- */
+.page-content {
+    /* Margin-top is set via inline style in AppLayout.jsx */
+    position: relative; 
+    z-index: 10; 
+    background-color: white; /* Start of the page body color */
+    padding: 0; /* Remove default padding, use padding inside sections */
+}
+
+/* =============================== */
+/*  ARTIST OF THE MONTH – HEADING  */
+/* =============================== */
+
+.aotm-heading {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 20px; /* space between heading & cards */
+}
+
+.aotm-subtitle {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #7a7a7a;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+.aotm-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif;
+  margin: 0;
+}
+
+.aotm-underline {
+  width: 60px;
+  height: 4px;
+  background: #c9a552; /* gold color from screenshot */
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Container to ensure the button is horizontally centered */
+.view-all-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    padding: 20px 0;
+   /* Add some vertical space above and below the button */
+}
+
+/* Style for the actual gold button */
+.view-all-button {
+    /* Color and Shape */
+    background-color: #d18e09; /* Gold color matching the image */
+    color: white; /* White text */
+    border: none;
+    border-radius: 30px;
+    text-decoration: none !important;
+     /* Highly rounded corners to achieve the pill shape */
+    
+    /* Text and Size */
+    padding: 10px 30px; 
+    font-size: 12
+    4px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    /* Optional: Add a subtle transition for hover effects */
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.view-all-button:hover {
+    background-color: #f0e2c8; /* Slightly darker gold on hover */
+}

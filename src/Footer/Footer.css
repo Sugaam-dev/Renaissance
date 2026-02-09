@@ -1,0 +1,152 @@
+/* Base Styles */
+.tr-main-footer {
+  padding: 40px 5%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.tr-footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Brand Section - Stacking Logo and Socials */
+.tr-brand-section {
+  display: flex;
+  flex-direction: column; /* Vertical stack */
+  align-items: flex-start; /* Align to the left */
+  flex: 1;
+  min-width: 250px;
+}
+
+.tr-logo-wrapper {
+  margin-bottom: 20px; /* Space between logo and icons */
+  width: 100%;
+}
+
+.tr-footer-logo {
+  width: 100%; 
+  max-width: 280px; 
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Social Icons - Positioned directly below logo */
+.tr-social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.tr-social-icon {
+  width: 45px;
+  height: 45px;
+  background: #f0f0f0; /* Light gray circle per the reference image */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.2s ease;
+}
+
+.tr-social-icon:hover {
+  transform: translateY(-3px);
+  background: #e8e8e8;
+}
+
+/* Links Grid */
+.tr-links-grid {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.tr-link-column h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.tr-link-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tr-link-column ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #444;
+}
+
+/* Bottom Section */
+.tr-footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-top: 1px solid #f9f9f9;
+  padding-top: 20px;
+}
+
+.tr-footer-bottom p {
+  font-size: 13px;
+  color: #666;
+}
+
+.tr-cta-button {
+  position: absolute;
+  right: 0;
+  background-color: #fbbc05;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+@media (max-width: 1024px) {
+  .tr-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tr-footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .tr-cta-button {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .tr-brand-section {
+    align-items: center; /* Center stack on mobile */
+    text-align: center;
+    width: 100%;
+  }
+  .tr-footer-logo {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .tr-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .tr-link-column {
+    text-align: center;
+  }
+}

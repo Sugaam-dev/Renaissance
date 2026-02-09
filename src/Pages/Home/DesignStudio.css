@@ -1,0 +1,75 @@
+.rds-help-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.rds-title-main {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.rds-grid-wrapper {
+  display: grid;
+  gap: 20px;
+  /* Default Mobile: 1 Column */
+  grid-template-columns: 1fr;
+}
+
+.rds-grid-item {
+  background: linear-gradient(180deg, #ffffff 0%, #e1d4ec 100%);
+  border: 1px solid #efefef;
+  border-radius: 20px;
+  padding: 40px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.rds-heading-sub {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.rds-text-body {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Desktop Logic */
+@media (min-width: 992px) {
+  .rds-grid-wrapper {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-areas: 
+      "left top right"
+      "left bottom right";
+  }
+
+  /* Area Assignments */
+  .rds-grid-wrapper > div:nth-child(1) { grid-area: left; }
+  .rds-grid-wrapper > div:nth-child(2) { grid-area: top; }
+  .rds-grid-wrapper > div:nth-child(3) { grid-area: right; }
+  .rds-grid-wrapper > div:nth-child(4) { grid-area: bottom; }
+
+  /* Ensure the side pillars stretch */
+  .rds-item-tall {
+    min-height: 500px;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .rds-grid-wrapper {
+  direction: rtl;
+}
+
+/* If you want to force RTL visually without changing HTML dir attribute */
+.rds-force-rtl {
+  direction: rtl;
+}

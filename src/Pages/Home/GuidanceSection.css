@@ -1,0 +1,132 @@
+.gs-main-card {
+  max-width: 1100px;
+  margin: 80px auto;
+  background: #fff;
+  /* Applying radius to the bottom of the whole component */
+  border-radius: 0 0 30px 30px; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  
+  /* Initial state for slide-up animation */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gs-main-card.gs-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Side-by-Side Layout */
+.gs-content-row {
+  display: flex;
+  padding: 40px;
+  gap: 50px;
+  align-items: center;
+  background-color: rgb(246, 246, 246);;
+}
+
+.gs-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.gs-hero-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px; /* Internal image rounding */
+}
+
+.gs-info-container {
+  flex: 1;
+}
+
+.gs-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+/* Feature List Styling */
+.gs-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gs-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.gs-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purple-bg { background: #f3e8ff; color: #7030f4; }
+.orange-bg { background: #fff7ed; color: #f97316; }
+.blue-bg { background: #f0f9ff; color: #0ea5e9; }
+
+/* The Purple Banner at the bottom */
+.gs-footer-banner {
+  background-color: #7030f4;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  /* This ensures the banner fills the bottom radius of the parent */
+  margin-top: auto; 
+}
+
+.gs-banner-msg {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gs-reg-btn {
+  background: white;
+  border: 2px solid #000;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .gs-content-row {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .gs-footer-banner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    border-radius: 0; /* Flatten on mobile if needed */
+  }
+
+  .gs-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,149 @@
+.hero-section {
+  width: 100%;
+  height: 100vh; /* Increased to full screen height */
+  margin-top: -85px; /* Pulls carousel under the transparent navbar if needed */
+}
+
+.hero-swiper, .hero-slide-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide-bg {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end; /* Push content to the bottom */
+  justify-content: center;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 80px; /* Space from bottom of screen */
+  color: white; /* Force all text to white */
+}
+
+/* Left side styling */
+.hero-left {
+  flex: 1;
+  text-align: left;
+}
+
+.italic-text {
+  font-family: 'Playfair Display', Georgia, serif; 
+  font-style: italic;
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: white; /* Exact white color */
+}
+
+.read-more-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* Right side styling */
+.hero-right {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  max-width: 400px;
+  line-height: 1;
+  text-align: right;
+  color: white;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 90px;
+  background-color: white; /* The white divider from your screenshot */
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  max-width: 300px;
+  text-align: left;
+  line-height: 1.4;
+  color: white;
+}
+
+/* Update this class in your HeroCarousel.css */
+.counseling-btn {
+  position: fixed;         /* Keeps the button fixed on the screen while scrolling */
+  bottom: 30px;            /* Distance from the bottom of the screen */
+  right: 20px;             /* Distance from the right of the screen */
+  z-index: 9999;           /* Ensures it stays above all other elements (carousel, navbar, etc.) */
+  
+  background-color: #ffde59;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;     /* Made it more circular/pill-shaped for a floating look */
+  font-weight: 900;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Added shadow to make it "float" */
+  transition: transform 0.3s ease;
+}
+
+.counseling-btn:hover {
+  transform: scale(1.05);  /* Slight grow effect on hover */
+  background-color: #f7d02c;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: white !important;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .hero-right { align-items: center; margin-top: 30px; }
+    .title-group { flex-direction: column; gap: 10px; }
+    .vertical-line { display: none; }
+    .hero-title, .hero-desc { text-align: center; }
+}
+
+@media (max-width: 1024px){
+    .hero-title{
+        font-size: 2rem;
+    }
+
+    .italic-text{
+        font-size: 2rem;
+    }
+}

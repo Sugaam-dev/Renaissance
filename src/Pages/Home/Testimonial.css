@@ -1,0 +1,631 @@
+/* --- Global Styles --- */
+.rds-page-container {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+
+/* --- Services Grid Section --- */
+.rds-services {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rds-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+
+.rds-grid-layout {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr; /* Mobile Default */
+}
+
+/* Desktop Grid Map */
+@media (min-width: 992px) {
+  .rds-grid-layout {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "left top right"
+      "left bottom right";
+  }
+
+  .rds-pillar-left { grid-area: left; min-height: 550px; }
+  .rds-center-top { grid-area: top; }
+  .rds-center-bottom { grid-area: bottom; }
+  .rds-pillar-right { grid-area: right; min-height: 550px; }
+}
+
+.rds-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f1fb 100%);
+  border: 1px solid #eee;
+  border-radius: 25px;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.rds-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.rds-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.rds-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* --- Testimonials Section --- */
+.rds-testimonials {
+  background-color: #d9d9d9; /* Matching the gray background in screenshot */
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  min-height: 400px;
+}
+
+.rds-testimonial-title {
+  font-size: 3rem;
+  font-weight: 400; /* Matching the thinner, tall font style */
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.rds-swiper-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rds-testimonial-item {
+  padding: 0 50px 40px;
+}
+
+.rds-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.rds-author-name {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.rds-author-role {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Custom Swiper Button Styling */
+.swiper-button-next, .swiper-button-prev {
+  color: #000 !important;
+  transform: scale(0.6);
+}
+
+.swiper-pagination-bullet-active {
+  background: #000 !important;
+}
+
+/* Floating Bottom Button */
+.rds-floating-cta {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fdbd44;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* --- Responsive Behavior --- */
+@media (max-width: 768px) {
+  .rds-main-title { font-size: 1.8rem; }
+  .rds-testimonial-title { font-size: 2rem; }
+  .rds-floating-cta { position: relative; margin-top: 30px; right: 0; }
+}
+
+/* Container & Resets */
+.rds-main-container {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+/* Grid Section */
+.rds-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.rds-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.rds-grid-layout {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr; /* Mobile view: 1 column */
+}
+
+.rds-box {
+  background: linear-gradient(180deg, #ffffff 0%, #f6effb 100%);
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.rds-box-title { font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; }
+.rds-box-text { font-size: 0.95rem; color: #555; line-height: 1.5; }
+
+/* Desktop Grid Mapping */
+@media (min-width: 992px) {
+  .rds-grid-layout {
+    grid-template-columns: 1fr 1.3fr 1fr;
+    grid-template-areas: 
+      "left top right"
+      "left bottom right";
+  }
+
+  .rds-area-left { grid-area: left; min-height: 500px; }
+  .rds-area-mid-top { grid-area: top; }
+  .rds-area-mid-bottom { grid-area: bottom; }
+  .rds-area-right { grid-area: right; min-height: 500px; }
+}
+
+/* Testimonials Section (Gray) */
+.rds-testimonial-section {
+  background-color: #d9d9d9;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.rds-testimonial-heading {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.rds-swiper { max-width: 800px; margin: 0 auto; padding-bottom: 50px; }
+.rds-quote { font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+
+.rds-cta-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #fdbd44;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Internship Section (White Background) */
+.rds-internship-wrapper {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rds-internship-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Button */
+@media (max-width: 768px) {
+  .rds-cta-btn { position: relative; right: 0; bottom: 0; margin-top: 20px; }
+}
+
+/* ... Previous CSS remains the same ... */
+
+/* NEW: Community Section Styles */
+.rds-community-section {
+  background-color: #f1f1f1; /* Light gray background to match the "Our Community" look */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.rds-community-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  text-align: left;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rds-community-card {
+  background: #ffffff;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rds-community-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.rds-profile-circle {
+  width: 60px;
+  height: 60px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+}
+
+.rds-profile-circle img {
+  width: 80%;
+  object-fit: contain;
+}
+
+.rds-profile-info {
+  text-align: left;
+}
+
+.rds-profile-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.rds-profile-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.rds-follow-btn {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+}
+
+.rds-follow-btn:hover {
+  background-color: #333;
+}
+
+.rds-arrow {
+  font-size: 1.2rem;
+}
+
+/* Ensure the white internship wrapper stays clean */
+.rds-internship-wrapper {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ... Previous Grid and Testimonial CSS remains ... */
+
+/* Our Community Section - Centered Design */
+.rds-community-section {
+  background-color: #f8f8f8; /* Very light gray background */
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.rds-community-main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.rds-community-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background: transparent;
+  padding: 10px;
+}
+
+.rds-profile-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rds-profile-logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); /* Instagram gradient feel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.rds-profile-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: white;
+  object-fit: cover;
+}
+
+.rds-profile-text h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.rds-profile-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+/* Vertical divider line */
+.rds-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #ccc;
+}
+
+.rds-follow-pill {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 50px; /* Fully rounded pill shape */
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+
+.rds-follow-pill:hover {
+  transform: scale(1.05);
+}
+
+.rds-arrow {
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsiveness for Community Bar */
+@media (max-width: 600px) {
+  .rds-community-bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rds-divider {
+    display: none;
+  }
+  .rds-community-main-title {
+    font-size: 2rem;
+  }
+}
+
+/* Container & Resets */
+.rds-main-container {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Services Grid */
+.rds-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.rds-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.rds-grid-layout {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.rds-box {
+  background: linear-gradient(180deg, #ffffff 0%, #f6effb 100%);
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.rds-box-title { font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; }
+.rds-box-text { font-size: 0.95rem; color: #555; line-height: 1.5; }
+
+/* Desktop Grid Mapping - 3 Column Pillar Layout */
+@media (min-width: 992px) {
+  .rds-grid-layout {
+    grid-template-columns: 1fr 1.3fr 1fr;
+    grid-template-areas: 
+      "left top right"
+      "left bottom right";
+  }
+  .rds-area-left { grid-area: left; min-height: 500px; }
+  .rds-area-mid-top { grid-area: top; }
+  .rds-area-mid-bottom { grid-area: bottom; }
+  .rds-area-right { grid-area: right; min-height: 500px; }
+}
+
+/* Testimonials (Gray Section) */
+.rds-testimonial-section {
+  background-color: #d9d9d9;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.rds-testimonial-heading {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.rds-cta-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #fdbd44;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* White Background Sections */
+.rds-white-section {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rds-full-width-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Community Image Specific Styling - Centers the image and controls width */
+.rds-community-logo-container {
+  padding-top: 0; /* Remove top padding to keep it tight with the previous image */
+}
+
+.rds-community-logo-img {
+  max-width: 1200px; /* Limits size to look like a centered bar */
+  width: 98%;
+  height: auto;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .rds-cta-btn { position: relative; right: 0; margin-top: 20px; }
+  .rds-testimonial-heading { font-size: 2rem; }
+}
+
+/* --- Animation Styles --- */
+
+/* Base state: Hidden and moved out of view */
+.rds-hidden {
+  opacity: 0;
+  transition: all 1s ease-out;
+  filter: blur(5px);
+}
+
+/* Slide from Left */
+.rds-from-left {
+  transform: translateX(-100px);
+}
+
+/* Slide from Right */
+.rds-from-right {
+  transform: translateX(100px);
+}
+
+/* Visible state triggered by JavaScript */
+.rds-show {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Ensure images don't cause horizontal scroll during animation */
+.rds-main-container {
+  overflow-x: hidden;
+}
+
+/* Existing Layout Fixes */
+.rds-white-section {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rds-full-width-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rds-community-logo-img {
+  max-width: 1200px;
+  width: 98%;
+  height: auto;
+}

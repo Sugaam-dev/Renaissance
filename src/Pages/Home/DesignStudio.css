@@ -10,6 +10,7 @@
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 40px;
+  color: black;
 }
 
 .rds-grid-wrapper {
@@ -35,6 +36,7 @@
   font-weight: 700;
   margin-bottom: 15px;
   line-height: 1.2;
+  color: black;
 }
 
 .rds-text-body {

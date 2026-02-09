@@ -107,6 +107,7 @@
 .rds-author-name {
   font-weight: 700;
   margin-bottom: 5px;
+  color: black;
 }
 
 .rds-author-role {
@@ -213,6 +214,7 @@
   font-size: 3rem;
   letter-spacing: 3px;
   margin-bottom: 40px;
+  color: black;
 }
 
 .rds-swiper { max-width: 800px; margin: 0 auto; padding-bottom: 50px; }

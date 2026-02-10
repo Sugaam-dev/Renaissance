@@ -1,5 +1,5 @@
 .rds-help-section {
-  padding: 50px 20px;
+  padding: 0px 20px 10px;
   max-width: 1200px;
   margin: 0 auto;
   font-family: sans-serif;
@@ -13,18 +13,24 @@
   color: black;
 }
 
+/* Mobile & Tablet Logic (under 992px) */
 .rds-grid-wrapper {
   display: grid;
-  gap: 20px;
-  /* Default Mobile: 1 Column */
-  grid-template-columns: 1fr;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+}
+
+/* Items 1 and 2 take full width on mobile/tablet */
+.rds-grid-wrapper > div:nth-child(1),
+.rds-grid-wrapper > div:nth-child(2) {
+  grid-column: span 2;
 }
 
 .rds-grid-item {
   background: linear-gradient(180deg, #ffffff 0%, #e1d4ec 100%);
   border: 1px solid #efefef;
   border-radius: 20px;
-  padding: 40px 25px;
+  padding: 20px 15px; /* Slightly tighter padding for mobile */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +51,7 @@
   line-height: 1.6;
 }
 
-/* Desktop Logic */
+/* Desktop Logic (992px and above) */
 @media (min-width: 992px) {
   .rds-grid-wrapper {
     grid-template-columns: 1fr 1.5fr 1fr;
@@ -54,24 +60,56 @@
       "left bottom right";
   }
 
-  /* Area Assignments */
-  .rds-grid-wrapper > div:nth-child(1) { grid-area: left; }
-  .rds-grid-wrapper > div:nth-child(2) { grid-area: top; }
-  .rds-grid-wrapper > div:nth-child(3) { grid-area: right; }
-  .rds-grid-wrapper > div:nth-child(4) { grid-area: bottom; }
+  /* Resetting spans for desktop */
+  .rds-grid-wrapper > div:nth-child(1) { grid-area: left; grid-column: auto; }
+  .rds-grid-wrapper > div:nth-child(2) { grid-area: top; grid-column: auto; }
+  .rds-grid-wrapper > div:nth-child(3) { grid-area: right; grid-column: auto; }
+  .rds-grid-wrapper > div:nth-child(4) { grid-area: bottom; grid-column: auto; }
 
-  /* Ensure the side pillars stretch */
-  .rds-item-tall {
-    min-height: 500px;
+}
+
+/* ... keep your existing CSS code above ... */
+
+/* Small Mobile Logic (425px and below) */
+@media (max-width: 426px) {
+  .rds-title-main {
+    font-size: 28px; /* Reduced from 32px */
+    margin-bottom: 25px;
+  }
+
+  .rds-heading-sub {
+    font-size: 16px; /* Reduced from 20px */
+    margin-bottom: 10px;
+  }
+
+  .rds-text-body {
+    font-size: 10px; /* Reduced from 14px */
+    line-height: 1.4;
+  }
+
+  .rds-grid-item {
+    padding: 20px 15px; /* Adjust padding for tighter screens */
+    border-radius: 15px;
   }
 }
 
-/* RTL Support */
-[dir="rtl"] .rds-grid-wrapper {
-  direction: rtl;
+/* Extra Small Mobile Logic (320px and below) */
+@media (max-width: 320px) {
+  .rds-title-main {
+    font-size: 20px;
+  }
+
+  .rds-heading-sub {
+    font-size: 12px;
+  }
+
+ .rds-heading-sub {
+    font-size: 12px; /* Reduced from 20px */
+  }
+
+    .rds-grid-item {
+    padding: 10px 5px; /* Adjust padding for tighter screens */
+    border-radius: 5px;
+  }
 }
 
-/* If you want to force RTL visually without changing HTML dir attribute */
-.rds-force-rtl {
-  direction: rtl;
-}

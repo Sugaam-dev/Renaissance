@@ -1,24 +1,28 @@
-/* Container Wrapper */
+/* ===============================
+   BASE (DESKTOP DEFAULT)
+================================ */
+
 .fs-main-wrapper {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 40px;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
-/* Common Banner Styles */
-.fs-banner-cta, .fs-banner-candidates {
-  border-radius: 50px;
+/* Common Banner */
+.fs-banner-cta,
+.fs-banner-candidates {
+  border-radius: 10px;
   padding: 50px;
   position: relative;
   overflow: hidden;
 }
 
-/* CTA Banner (Purple) */
+/* CTA Banner */
 .fs-banner-cta {
   background-color: #7030f4;
-  /* Wavy pattern using background SVG or gradients */
   background-image: repeating-linear-gradient(
     -45deg,
     transparent,
@@ -59,16 +63,10 @@
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 }
 
-.fs-btn-register:active {
-  transform: translate(2px, 2px);
-  box-shadow: none;
-}
-
-/* Candidates Banner (Yellow) */
+/* Candidates Banner */
 .fs-banner-candidates {
   background-color: #ffcc33;
   background-image: repeating-linear-gradient(
@@ -90,14 +88,12 @@
   font-size: 2.5rem;
   font-weight: 900;
   margin: 0;
-  letter-spacing: -1px;
 }
 
 .fs-profiles-container {
   display: flex;
   flex-grow: 1;
   justify-content: space-around;
-  gap: 20px;
 }
 
 .fs-profile-item {
@@ -111,8 +107,6 @@
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  background: #ddd;
-  margin-bottom: 15px;
 }
 
 .fs-avatar-img {
@@ -122,127 +116,179 @@
 }
 
 .fs-profile-label {
-  font-family: 'Times New Roman', serif; /* Matching the elegant serif in image */
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Responsive Logic */
-@media (max-width: 900px) {
-  .fs-cta-grid, .fs-candidates-layout {
-    flex-direction: column;
-    text-align: center;
-  }
-  .fs-profiles-container {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 428px){
-  .fs-section-title{
-    font-size: 1.8rem;
-  }
-}
-
-/* --- Animation Keyframes --- */
-
-@keyframes fsSlideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fsSlideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fsSlideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- Animation Classes --- */
-
-.fs-anim-slide-left {
-  animation: fsSlideInLeft 0.8s ease-out forwards;
-}
-
-.fs-anim-slide-right {
-  animation: fsSlideInRight 0.8s ease-out forwards;
-}
-
-.fs-anim-slide-up {
-  opacity: 0; /* Start hidden for delay effect */
-  animation: fsSlideInUp 0.6s ease-out forwards;
-}
-
-/* --- Rest of your existing styles --- */
-
-.fs-main-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 40px;
-  overflow-x: hidden; /* Prevents scrollbars during horizontal animation */
-}
-
-.fs-banner-cta, .fs-banner-candidates {
-  border-radius: 50px;
-  padding: 50px;
-  position: relative;
-}
-
-.fs-banner-cta {
-  background-color: #7030f4;
-  color: #fff;
-  /* ... (wavy background pattern from previous step) */
-}
-
-.fs-banner-candidates {
-  background-color: #ffcc33;
-  /* ... (wavy background pattern from previous step) */
-}
-
-.fs-cta-grid, .fs-candidates-layout {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.fs-avatar-frame {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: transform 0.5s ease;
-}
-
-/* Subtle hover effect for the profile circles */
-.fs-profile-item:hover .fs-avatar-frame {
-  transform: scale(1.05);
-}
-
-.fs-profile-label {
   font-family: 'Times New Roman', serif;
   margin-top: 10px;
+  font-size: 1rem;
 }
 
-/* (Include your previous button and typography styles here) */
+/* ===============================
+   TABLET & SMALL DESKTOP ≤1024px
+================================ */
+
+@media (max-width: 1024px) {
+
+  .fs-main-wrapper {
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .fs-banner-cta,
+  .fs-banner-candidates {
+    padding: 20px 15px;
+  }
+
+  /* CTA */
+  .fs-cta-heading {
+    font-size: 1.5rem;
+  }
+
+  .fs-cta-text {
+    font-size: 0.8rem;
+    max-width: 45%;
+  }
+
+  .fs-btn-register {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* Candidates */
+  .fs-section-title {
+    font-size: 1.8rem;
+    min-width: 70px;
+  }
+
+  .fs-profiles-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+
+  .fs-avatar-frame {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+  }
+
+}
+
+/* ===============================
+   TABLET ≤768px
+================================ */
+
+@media (max-width: 768px) {
+
+  .fs-cta-heading {
+    font-size: 2.2rem;
+  }
+
+  .fs-cta-text {
+    font-size: 0.95rem;
+    max-width: 260px;
+  }
+
+  .fs-btn-register {
+    font-size: 0.85rem;
+    padding: 10px 18px;
+  }
+
+  .fs-profiles-container {
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .fs-profile-label {
+    display: none;
+  }
+
+  .fs-section-title {
+    font-size: 1.4rem;
+  }
+
+    .fs-avatar-frame {
+    width: 92px;
+    height: 92px;
+    flex-shrink: 0;
+  }
+}
+
+
+
+/* ===============================
+   MOBILE ≤430px
+================================ */
+
+@media (max-width: 432px) {
+
+  .fs-cta-heading {
+    font-size: 1rem;
+  }
+
+  .fs-cta-text {
+    font-size: 0.35rem;
+  }
+
+  .fs-btn-register {
+    font-size: 0.25rem;
+  }
+
+  .fs-profile-label {
+    display: none;
+  }
+
+  .fs-section-title {
+    font-size: 0.8rem;
+  }
+
+  .fs-candidates-layout {
+    gap: 10px;
+  }
+
+   .fs-banner-cta,
+  .fs-banner-candidates {
+    padding: 10px 15px;
+}
+
+ .fs-avatar-frame {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+  }
+   .fs-profiles-container {
+    justify-content: center;
+    gap: 18px;
+  }
+
+}
+
+/* ===============================
+   FIX: MOBILE IMAGE CUTTING ≤420px
+================================ */
+
+@media (max-width: 420px) {
+
+  .fs-profiles-container {
+    justify-content: center;
+    gap: 8px;
+    overflow: visible;
+  }
+
+  .fs-avatar-frame {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .fs-section-title {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .fs-avatar-frame {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+}

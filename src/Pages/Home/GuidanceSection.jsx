@@ -53,7 +53,7 @@ const GuidanceSection = () => {
       <div className="gs-footer-banner">
         <p className="gs-banner-msg">To schedule a Personalized Counseling session register Today!</p>
         <button className="gs-reg-btn">
-          Register Now <span>&rarr;</span>
+          GET A CALL BACK <span>&rarr;</span>
         </button>
       </div>
     </section>

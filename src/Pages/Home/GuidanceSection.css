@@ -1,9 +1,9 @@
 .gs-main-card {
   max-width: 1100px;
-  margin: 80px auto;
+  margin: 0px auto;
   background: #fff;
   /* Applying radius to the bottom of the whole component */
-  border-radius: 0 0 30px 30px; 
+  border-radius: 0 0 10px 10px; 
   overflow: hidden; 
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
 .gs-features {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .gs-feature-row {
@@ -119,7 +119,6 @@
   }
   
   .gs-footer-banner {
-    flex-direction: column;
     gap: 20px;
     text-align: center;
     border-radius: 0; /* Flatten on mobile if needed */
@@ -131,3 +130,23 @@
   }
 }
 
+@media (max-width: 768px){
+ .gs-content-row {
+    padding: 15px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+.gs-footer-banner {
+  padding: 5px 5px;
+}
+
+.gs-banner-msg {
+  font-size: 0.6rem;
+}
+.gs-reg-btn {
+  padding: 2px 6px;
+  font-size: 0.5rem;
+}
+}

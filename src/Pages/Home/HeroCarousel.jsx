@@ -27,7 +27,7 @@ const HeroCarousel = () => {
     {
         id: 3,
         image: '/Images/herocarousel-3.avif', 
-        italicText: 'Creative Portfolios',
+        italicText: 'Creative Portfolio',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools'
     }

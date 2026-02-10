@@ -81,9 +81,23 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  /* Aligns the bars to the right so the 'stagger' happens on the left */
+  align-items: flex-end; 
+  gap: 5px;
+  cursor: pointer;
 }
-.hamburger span { width: 22px; height: 2px; background: #333; }
+
+.hamburger span {
+  height: 4px;
+  background-color: #000;
+  border-radius: 10px; /* Gives the rounded ends shown in your image */
+  transition: width 0.3s ease;
+}
+
+/* Specific widths to match your screenshot */
+.bar-top { width: 18px; margin-right: 12px; }
+.bar-mid { width: 30px; }
+.bar-bot { width: 18px; }
 
 @media (max-width: 1200px) {
   .hamburger { display: flex; }

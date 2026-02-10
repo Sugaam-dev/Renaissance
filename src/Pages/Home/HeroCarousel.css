@@ -1,7 +1,9 @@
+/* Core Layout */
 .hero-section {
   width: 100%;
-  height: 100vh; /* Increased to full screen height */
-  margin-top: -85px; /* Pulls carousel under the transparent navbar if needed */
+  height: 100vh; 
+  margin-top: -85px; 
+  overflow: hidden;
 }
 
 .hero-swiper, .hero-slide-bg {
@@ -13,7 +15,7 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end; /* Push content to the bottom */
+  align-items: flex-end; /* Default for desktop */
   justify-content: center;
 }
 
@@ -23,8 +25,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-bottom: 80px; /* Space from bottom of screen */
-  color: white; /* Force all text to white */
+  padding-bottom: 80px; 
+  color: white;
 }
 
 /* Left side styling */
@@ -40,7 +42,7 @@
   font-size: 3.5rem;
   font-weight: 400;
   margin-bottom: 20px;
-  color: white; /* Exact white color */
+  color: white;
 }
 
 .read-more-btn {
@@ -80,7 +82,7 @@
 .vertical-line {
   width: 2px;
   height: 90px;
-  background-color: white; /* The white divider from your screenshot */
+  background-color: white;
 }
 
 .hero-desc {
@@ -91,27 +93,26 @@
   color: white;
 }
 
-/* Update this class in your HeroCarousel.css */
+/* Floating Action Button */
 .counseling-btn {
-  position: fixed;         /* Keeps the button fixed on the screen while scrolling */
-  bottom: 30px;            /* Distance from the bottom of the screen */
-  right: 20px;             /* Distance from the right of the screen */
-  z-index: 9999;           /* Ensures it stays above all other elements (carousel, navbar, etc.) */
-  
+  position: fixed;         
+  bottom: 30px;            
+  right: 20px;             
+  z-index: 9999;           
   background-color: #ffde59;
   color: black;
   border: none;
   padding: 15px 25px;
-  border-radius: 50px;     /* Made it more circular/pill-shaped for a floating look */
+  border-radius: 50px;     
   font-weight: 900;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Added shadow to make it "float" */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
   transition: transform 0.3s ease;
 }
 
 .counseling-btn:hover {
-  transform: scale(1.05);  /* Slight grow effect on hover */
+  transform: scale(1.05);  
   background-color: #f7d02c;
 }
 
@@ -125,36 +126,72 @@
   opacity: 1;
 }
 
-/* Responsive */
+/* --- UPDATED RESPONSIVE SECTION --- */
+
+/* Tablet & Mobile (Standard) */
 @media (max-width: 1024px) {
+    .hero-slide-bg {
+        align-items: center; /* Vertically centers the container on the screen */
+    }
+
     .hero-container {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
-        padding-bottom: 40px;
-    }
-    .hero-right { align-items: center; margin-top: 30px; }
-    .title-group { flex-direction: column; gap: 10px; }
-    .vertical-line { display: none; }
-    .hero-title, .hero-desc { text-align: center; }
-}
-
-@media (max-width: 1024px){
-    .hero-title{
-        font-size: 2rem;
-    }
-
-    .italic-text{
-        font-size: 2rem;
+        padding-bottom: 0; /* Removes bottom-heavy padding to allow true centering */
+        height: auto;
     }
 
     .hero-left {
-        margin-bottom: 50px;
+        flex: none;
+        margin-bottom: 40px; /* Space between the two content blocks */
+        text-align: center;
+    }
+
+    .hero-right {
+        flex: none;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .title-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .vertical-line {
+        display: none; /* Removes the line to keep the stack clean */
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .italic-text {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-desc {
+        text-align: center;
+        max-width: 100%;
     }
 }
 
-@media (max-width: 430px){
-   .hero-left {
-        margin-bottom: 0px;
+/* Small Mobile adjustment */
+@media (max-width: 430px) {
+    .hero-left {
+        margin-bottom: 20px; /* Tighter spacing for very small screens */
+    }
+    
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .italic-text {
+        font-size: 1.8rem;
     }
 }

@@ -119,3 +119,10 @@
   .nav-right { width: 100%; justify-content: center; margin-top: 15px; }
   .pill { width: 100%; text-align: center; }
 }
+
+.active {
+  background-color: #cbceff !important;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}

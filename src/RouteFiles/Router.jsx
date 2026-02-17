@@ -4,10 +4,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from '../Pages/Home/HomePage.jsx'; // The new component
 import Navbar from "../Navbar/Navbar";
 import Footer from '../Footer/Footer.jsx';
+import RegisterPage from '../Pages/registerNow/RegisterPage.jsx';
+import OurPresence from '../Pages/ourPresence/OurPresence.jsx';
+import ExamEnquiry from '../Pages/examEnquiry/ExamEnquiry.jsx';
+import ScrollToTop from '../components/ScrollToTop.jsx';
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <div className="layout-container">
         
         
@@ -18,9 +23,13 @@ const AppRouter = () => {
           <Routes>
             {/* Home Page Route */}
             <Route path="/" element={<HomePage />} />
-              <Route path="/home" element={<HomePage />} />
-              <Route path="/dashboard" element={<HomePage />} /> 
+              {/* <Route path="/home" element={<HomePage />} /> */}
+              {/* <Route path="/dashboard" element={<HomePage />} />  */}
             {/* The :slug part makes the URL dynamic (e.g., /product/red-wine-art-print) */}
+            <Route path ='/registration' element={<RegisterPage/>}/>
+            <Route path='/our-presence' element={<OurPresence/>}/>
+        
+                       <Route path='/exam-enquiry' element={<ExamEnquiry/>}/>
           
           </Routes>
           <Footer />

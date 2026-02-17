@@ -1,46 +1,94 @@
-
-
-import React, { useState } from 'react';
-import './Navbar.css';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <nav className="navbar-main">
-      {/* Main container for the entire screen width */}
       <div className="nav-flex-wrapper">
-        
-        {/* LEFT: Attached to the left edge */}
+
+        {/* LEFT */}
         <div className="nav-left">
-          <img src="/Images/logo.avif" alt="Renaissance" className="brand-logo-img" />
+          <img
+            src="/Images/logo.avif"
+            alt="Renaissance"
+            className="brand-logo-img"
+          />
         </div>
 
-        {/* MOBILE TOGGLE */}
+        {/* HAMBURGER */}
         <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
           <span className="bar-top"></span>
           <span className="bar-mid"></span>
           <span className="bar-bot"></span>
         </div>
 
-        {/* CENTER & RIGHT: Navigation Menu */}
-        <div className={`nav-menu-group ${isOpen ? 'is-open' : ''}`}>
-          {/* MIDDLE: Links centered between Logo and Button */}
+        {/* MENU */}
+        <div className={`nav-menu-group ${isOpen ? "is-open" : ""}`}>
+
           <div className="nav-links-center">
-            <a href="#" className="pill purple">Home</a>
-            <a href="#" className="pill yellow">Why Renaissance</a>
-            <a href="#" className="pill yellow">Register now</a>
-            <a href="#" className="pill yellow">Our Presence</a>
-            <a href="#" className="pill yellow">Exams</a>
-            <a href="#" className="pill yellow">Enquiry for exam</a>
+
+            <NavLink to="/" end onClick={closeMenu}
+              className={({ isActive }) =>
+                `pill ${isActive ? "active purple" : "yellow"}`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink to="/why-renaissance" onClick={closeMenu}
+              className={({ isActive }) =>
+                `pill ${isActive ? "active purple" : "yellow"}`
+              }
+            >
+              Why Renaissance
+            </NavLink>
+
+            <NavLink to="/registration" onClick={closeMenu}
+              className={({ isActive }) =>
+                `pill ${isActive ? "active purple" : "yellow"}`
+              }
+            >
+              Register now
+            </NavLink>
+
+            <NavLink to="/our-presence" onClick={closeMenu}
+              className={({ isActive }) =>
+                `pill ${isActive ? "active purple" : "yellow"}`
+              }
+            >
+              Our Presence
+            </NavLink>
+
+            <NavLink to="/exams" onClick={closeMenu}
+              className={({ isActive }) =>
+                `pill ${isActive ? "active purple" : "yellow"}`
+              }
+            >
+              Exams
+            </NavLink>
+
+            <NavLink to="/exam-enquiry" onClick={closeMenu}
+              className={({ isActive }) =>
+                `pill ${isActive ? "active purple" : "yellow"}`
+              }
+            >
+              Enquiry for exam
+            </NavLink>
+
           </div>
 
-          {/* RIGHT: Attached to the right edge */}
           <div className="nav-right">
-            <button className="btn-download">Download Brochure</button>
+            <button className="btn-download">
+              Download Brochure
+            </button>
           </div>
-        </div>
 
+        </div>
       </div>
     </nav>
   );

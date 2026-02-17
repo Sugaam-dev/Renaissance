@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+}
+
+.page-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* ========================= */
+/* BANNER */
+/* ========================= */
+
+.banner-section {
+  width: 100%;
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ========================= */
+/* REGISTER BOX */
+/* ========================= */
+
+.register-container {
+  width: 85%;
+  max-width: 1050px;
+  margin: -230px auto 80px auto;
+  background: #ffffff;
+  padding: 35px 50px 50px 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.bottom-separator {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: #ddd;
+}
+
+/* ========================= */
+/* LEFT SECTION */
+/* ========================= */
+
+.left-section {
+  width: 40%;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  transition: 0.3s ease;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.contact-info {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 25px;
+  flex-wrap: wrap; /* important */
+}
+
+.info-block {
+  min-width: 140px;
+}
+
+.info-block h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.hover-text {
+  font-size: 14px;
+  text-decoration: underline;
+  transition: 0.3s ease;
+  cursor: pointer;
+  word-break: break-word; /* prevents overflow */
+}
+
+.hover-text:hover {
+  color: #000;
+}
+
+/* Social */
+.social h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.icons svg {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icons svg:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: #000;
+}
+
+/* ========================= */
+/* RIGHT SECTION */
+/* ========================= */
+
+.right-section {
+  width: 55%;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.input-group label {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #444;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.input-group textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* ========================= */
+/* BEAUTIFUL BUTTON */
+/* ========================= */
+
+.send-btn {
+  align-self: center;
+  padding: 12px 50px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #000, #333);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.send-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.send-btn:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .register-container {
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    margin: -180px auto 60px auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-section {
+    height: 350px;
+  }
+
+  .register-container {
+    margin: -140px auto 60px auto;
+    padding: 25px;
+  }
+
+  .contact-info {
+    flex-direction: column;   /* stack phone + email */
+    gap: 15px;
+  }
+
+  .hover-text {
+    font-size: 15px; /* slightly larger for readability */
+  }
+
+  .send-btn {
+    width: 70%;  /* not full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-section {
+    height: 280px;
+  }
+
+  .register-container {
+    margin: -110px auto 40px auto;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .contact-info {
+    align-items: flex-start;
+  }
+
+  .hover-text {
+    font-size: 15px;
+  }
+
+  .send-btn {
+    width: 80%;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .input-group textarea {
+    height: 70px;
+  }
+}
+.form-result {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}

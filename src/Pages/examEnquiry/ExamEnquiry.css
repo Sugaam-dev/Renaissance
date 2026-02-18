@@ -38,7 +38,7 @@
   margin: -120px auto 80px auto;
   background: #ffffff;
   padding: 40px 50px 50px 50px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); */
   position: relative;
 }
 

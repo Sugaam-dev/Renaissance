@@ -27,8 +27,8 @@ const Navbar = () => {
         <div className={`nav-menu-group ${isOpen ? 'is-open' : ''}`}>
           {/* MIDDLE: Links centered between Logo and Button */}
           <div className="nav-links-center">
-            <a href="#" className="pill purple">Home</a>
-            <a href="#" className="pill yellow">Why Renaissance</a>
+            <a href="/" className="pill purple">Home</a>
+            <a href="/about" className="pill yellow">Why Renaissance</a>
             <a href="#" className="pill yellow">Register now</a>
             <a href="#" className="pill yellow">Our Presence</a>
             <a href="#" className="pill yellow">Exams</a>

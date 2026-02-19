@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+.exam-wrapper {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+}
+
+/* ========================= */
+/* Banner */
+/* ========================= */
+
+.exam-banner {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exam-banner h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+}
+
+/* ========================= */
+/* Form Container */
+/* ========================= */
+
+.exam-form-container {
+  width: 85%;
+  max-width: 950px;
+  margin: -120px auto 80px auto;
+  background: #ffffff;
+  padding: 40px 50px 50px 50px;
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); */
+  position: relative;
+}
+
+.exam-form-container h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Separator */
+.bottom-separator {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  right: 50px;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+/* ========================= */
+/* Form Styling */
+/* ========================= */
+
+.exam-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group.full {
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease;
+}
+
+.form-group label:hover {
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #444;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #000;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.exam-btn {
+  align-self: center;          /* center button */
+  padding: 12px 35px;          /* horizontal padding */
+  font-size: 14px;
+  font-weight: 600;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 30px;         /* rounded */
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.exam-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.exam-btn:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .exam-banner h1 {
+    font-size: 28px;
+  }
+
+  .exam-form-container {
+    margin: -100px auto 60px auto;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-banner {
+    height: 250px;
+  }
+
+  .exam-form-container {
+    margin: -80px auto 40px auto;
+    padding: 20px;
+  }
+}
+.form-result {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}

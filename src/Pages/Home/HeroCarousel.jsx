@@ -88,8 +88,13 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './HeroCarousel.css';
+import { useNavigate } from 'react-router-dom';
 
 const HeroCarousel = () => {
+  const navigate = useNavigate();
+  const book =()=>{
+    navigate('/registration');
+  }
   const slides = [
     {
       id: 1,
@@ -156,7 +161,7 @@ const HeroCarousel = () => {
         ))}
       </Swiper>
 
-        <button className="counseling-btn">
+        <button className="counseling-btn" onClick={book}>
             BOOK A FREE COUNSELING SESSION
         </button>
     </div>

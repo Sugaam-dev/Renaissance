@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer.jsx';
 import RegisterPage from '../Pages/registerNow/RegisterPage.jsx';
 import OurPresence from '../Pages/ourPresence/OurPresence.jsx';
 import ExamEnquiry from '../Pages/examEnquiry/ExamEnquiry.jsx';
+import AboutSection from '../Pages/About/AboutSection.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 
 const AppRouter = () => {
@@ -27,6 +28,7 @@ const AppRouter = () => {
               {/* <Route path="/dashboard" element={<HomePage />} />  */}
             {/* The :slug part makes the URL dynamic (e.g., /product/red-wine-art-print) */}
             <Route path ='/registration' element={<RegisterPage/>}/>
+            <Route path ='/why-renaissance' element={<AboutSection/>}/>
             <Route path='/our-presence' element={<OurPresence/>}/>
         
                        <Route path='/exam-enquiry' element={<ExamEnquiry/>}/>

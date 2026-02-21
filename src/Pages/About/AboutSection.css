@@ -1,0 +1,124 @@
+/* Unique prefix 'rs-about' to prevent style leaks */
+
+.rs-about-root-container {
+  background-color: #fdb927; /* The signature yellow background */
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+.rs-about-card-wrapper {
+  background-color: #ffffff;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Content Layout */
+.rs-about-text-column {
+  flex: 1; /* Text column is slightly wider than image */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rs-about-image-column {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Typography */
+.rs-about-main-heading {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+.rs-about-body-content p {
+  font-family: 'Georgia', serif; /* Matching the serif style in the image */
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #222222;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.rs-about-body-content strong {
+  font-weight: 700;
+}
+
+/* Hero Image Handling */
+.rs-about-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet View (Max 1024px) */
+@media screen and (max-width: 1024px) {
+  .rs-about-root-container {
+    padding: 30px;
+  }
+  
+  .rs-about-text-column {
+    padding: 40px;
+  }
+
+  .rs-about-main-heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile View (Max 768px) */
+@media screen and (max-width: 768px) {
+  .rs-about-card-wrapper {
+    flex-direction: column; /* Stack vertically */
+  }
+
+  .rs-about-root-container {
+    padding: 15px;
+  }
+
+  .rs-about-text-column {
+    padding: 40px 25px;
+    order: 1; /* Text stays on top */
+  }
+
+  .rs-about-image-column {
+    height: 350px;
+    order: 2; /* Image goes to bottom */
+  }
+
+  .rs-about-main-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .rs-about-body-content p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 430px){
+     .rs-about-main-heading {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .rs-about-body-content p {
+    font-size: 0.8rem;
+  }
+}

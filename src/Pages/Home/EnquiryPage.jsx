@@ -124,17 +124,17 @@ const EnquiryPage = () => {
                 
                 <div className="ep-field-group">
                   <label className="ep-label">EMAIL ADDRESS *</label>
-                  <input type="email" className="ep-input" required />
+                  <input type="email" className="ep-input" placeholder="Enter your email" required />
                 </div>
                 
                 <div className="ep-field-group">
                   <label className="ep-label">WHICH STANDARD ARE YOU STUDYING IN?</label>
-                  <input type="text" className="ep-input" required />
+                  <input type="text" className="ep-input" placeholder="Enter your standard" required />
                 </div>
                 
                 <div className="ep-field-group">
                   <label className="ep-label">WHAT EXAMS ARE YOU PREPARING FOR</label>
-                  <input type="text" className="ep-input" required />
+                  <input type="text" className="ep-input" placeholder="Enter the exam name" required />
                 </div>
 
                 <button type="submit" className="ep-submit-button">Send</button>

@@ -79,15 +79,6 @@ const Testimonial = () => {
           className="rds-full-width-img"
         />
       </div>
-
-      {/* Community Section - Comes from Right to Left */}
-      <div className="rds-white-section rds-community-logo-container rds-hidden rds-from-right">
-        <img 
-          src="/Images/community-logo.avif" 
-          alt="Our Community" 
-          className="rds-community-logo-img"
-        />
-      </div>
     </div>
   );
 };

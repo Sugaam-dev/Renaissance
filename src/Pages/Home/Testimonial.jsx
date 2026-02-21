@@ -1,5 +1,3 @@
-
-
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -48,6 +46,10 @@ const Testimonial = () => {
     }
   ];
 
+  // Create order 1,2,3,2,1,2,3,2,1... (smooth oscillating pattern)
+  const displayOrder = [0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1]; // Extended to loop smoothly
+  const orderedTestimonials = displayOrder.map(idx => testimonials[idx]);
+
   return (
     <div className="rds-main-container">
       {/* Testimonials Section */}
@@ -60,8 +62,8 @@ const Testimonial = () => {
           autoplay={{ delay: 4000 }}
           className="rds-swiper"
         >
-          {testimonials.map((item) => (
-            <SwiperSlide key={item.id}>
+          {orderedTestimonials.map((item, index) => (
+            <SwiperSlide key={index}>
               <div className="rds-slide-content">
                 <p className="rds-quote">"{item.text}"</p>
                 <p className="rds-author"><strong>{item.name}</strong> — {item.role}</p>

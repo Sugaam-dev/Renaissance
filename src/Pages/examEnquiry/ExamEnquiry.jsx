@@ -97,14 +97,16 @@ export default function ExamEnquiry() {
 
             <div className="form-group">
               <label>
-                <BookOpen size={16} /> Exam Name
+                <BookOpen size={16} /> Course Name
               </label>
-              <input
-                type="text"
-                name="exam"
-                required
-                placeholder="Enter exam name"
-              />
+              <select name="course" required>
+                <option value="">Select course</option>
+                <option value="DESIGN UG">DESIGN UG</option>
+                <option value="DESIGN PG">DESIGN PG</option>
+                <option value="FOREIGN PORTFOLIO">FOREIGN PORTFOLIO</option>
+                <option value="ARCHITECTURE">ARCHITECTURE</option>
+                <option value="FINE ARTS">FINE ARTS</option>
+              </select>
             </div>
           </div>
 

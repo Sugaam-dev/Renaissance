@@ -106,13 +106,32 @@
   transition: all 0.3s ease;
 }
 
+.form-group select {
+  padding: 10px;
+  border: 1px solid #444;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
 .form-group input:hover,
 .form-group textarea:hover {
   border-color: #000;
 }
 
+.form-group select:hover {
+  border-color: #000;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-group select:focus {
   border-color: #000;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }

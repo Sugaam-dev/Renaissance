@@ -119,6 +119,14 @@ const HeroCarousel = () => {
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
         path: '/portfolio-design'
+    },
+      {
+        id: 4,
+        image: '/Images/herocarousel-2.avif', 
+        italicText: 'Foreign Portfolio',
+        title: 'BUILD YOUR IDENTITY',
+        desc: 'Crafing unique portfolios that get noticed by top design schools',
+        path: '/portfolio-design'
     }
   ];
 

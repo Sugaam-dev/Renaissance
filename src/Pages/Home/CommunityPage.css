@@ -1,0 +1,129 @@
+/* Unique prefix 'cp-' for Community Page */
+
+.cp-wrapper {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden; /* Prevents scrollbars during animation */
+}
+
+/* Base Animation: Slide from bottom (30px) to original position */
+@keyframes cpSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cp-main-title {
+  font-size: 32px; /* Reduced from 48px */
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  animation: cpSlideUp 0.8s ease forwards;
+}
+
+.cp-content-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  /* Staggered delay: appears shortly after the title */
+  animation: cpSlideUp 0.8s ease 0.2s forwards;
+  opacity: 0; /* Starts hidden until animation kicks in */
+}
+
+.cp-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cp-logo-circle {
+  width: 48px; /* Reduced from 60px */
+  height: 48px; /* Reduced from 60px */
+  border-radius: 50%;
+  background: radial-gradient(circle at top right, #ffb347, #ffcc33, #12c2e9, #c471ed, #f64f59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-logo-symbol {
+  color: #fff;
+  font-weight: 900;
+  font-size: 18px; /* Reduced from 24px */
+  font-style: italic;
+}
+
+.cp-text-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-brand-name {
+  font-size: 16px; /* Reduced from 20px */
+  font-weight: 700;
+  color: #000;
+  line-height: 1.1;
+}
+
+.cp-post-count {
+  font-size: 13px; /* Reduced from 15px */
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.cp-vertical-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #d1d5db;
+}
+
+.cp-follow-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 28px; /* Reduced padding */
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 13px; /* Reduced from 15px */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cp-follow-button:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 640px) {
+  .cp-main-title {
+    font-size: 26px;
+  }
+
+  .cp-content-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cp-vertical-divider {
+    display: none;
+  }
+
+  .cp-brand-group {
+    flex-direction: column;
+    text-align: center;
+  }
+}

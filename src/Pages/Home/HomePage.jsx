@@ -7,6 +7,7 @@ const GuidanceSection = lazy(() => import('./GuidanceSection'));
 const DesignStudio = lazy(() => import('./DesignStudio'));
 const Testimonial = lazy(() => import('./Testimonial'));
 const EnquiryPage = lazy(() => import('./EnquiryPage'));
+const CommunityPage = lazy(() => import('./CommunityPage'));
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
         <GuidanceSection />
         <DesignStudio />
         <Testimonial />
+        <CommunityPage />
         <EnquiryPage />
       </Suspense>
     </div>

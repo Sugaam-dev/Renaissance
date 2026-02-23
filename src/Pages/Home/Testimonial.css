@@ -220,6 +220,66 @@
 .rds-swiper { max-width: 800px; margin: 0 auto; padding-bottom: 50px; }
 .rds-quote { font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
 
+/* Author Section with Image */
+.rds-author-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.rds-author-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rds-author-info {
+  text-align: left;
+}
+
+.rds-author {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Custom Pagination Styles */
+.rds-swiper-wrapper {
+  position: relative;
+}
+
+.rds-custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.rds-pagination-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #d0d0d0;
+  transition: background-color 0.3s ease;
+}
+
+.rds-pagination-btn.active {
+  background-color: #000000 !important;
+}
+
+.rds-pagination-btn:hover {
+  background-color: #999;
+}
+
+.rds-pagination-btn.active:hover {
+  background-color: #000;
+}
+
 .rds-cta-btn {
   position: absolute;
   bottom: 20px;

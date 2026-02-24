@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import './Footer.css';
 
@@ -16,13 +14,13 @@ const Footer = () => {
           
           {/* Social icons are now forced below the logo */}
           <div className="tr-social-links">
-            <a href="https://instagram.com" className="tr-social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/therenaissanceindia?utm_source=qr&igsh=Z3RhMXJjbXpnbHBp" className="tr-social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://facebook.com" className="tr-social-icon" aria-label="Facebook">
+            <a href="https://www.facebook.com/TheRenaissance2010?mibextid=wwXIfr&rdid=FqAjLyqj7DiQOEY7&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ASQdJeZ2a%2F%3Fmibextid%3DwwXIfr#" className="tr-social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <i className="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="https://twitter.com" className="tr-social-icon" aria-label="Twitter">
+            <a href="https://twitter.com" className="tr-social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <i className="fa-brands fa-twitter"></i>
             </a>
           </div>

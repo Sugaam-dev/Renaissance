@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 import AppRouter from "./RouteFiles/Router.jsx";
+import WhatsappButton from "./components/WhatsappButton.jsx";
 
 
 function App() {
   return (
-    // App.jsx now just calls the router
-    <AppRouter />
+    <>
+      <AppRouter />
+      <WhatsappButton />
+    </>
   );
 }
 

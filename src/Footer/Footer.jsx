@@ -45,7 +45,7 @@ const Footer = () => {
               <li>Books</li><li>PYQ</li><li>Sample Papers</li>
             </ul>
           </div>
-          <div className="tr-link-column"><h3>Design Internship Prog</h3></div>
+          {/* <div className="tr-link-column"><h3>Design Internship Prog</h3></div> */}
           <div className="tr-link-column"><h3>Our Presence</h3></div>
           <div className="tr-link-column"><h3>Contact Us</h3></div>
         </div>

@@ -20,7 +20,7 @@ const HeroCarousel = () => {
     {
       id: 1,
       image: '/Images/herocarousel-1.avif',
-      italicText: 'Bachelor of fine arts',
+      italicText: 'Bachelor of Design',
       title: 'WELCOME TO The RENAISSANCE',
       desc: 'Your one stop to get future ready to crack Design entrance exams',
       path: '/bachelor-of-design' // 2. Add path for routing
@@ -36,7 +36,7 @@ const HeroCarousel = () => {
     {
         id: 3,
         image: '/Images/herocarousel-3.avif', 
-        italicText: 'Bachelor of Design',
+        italicText: 'Foreign Portfolio',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
         path: '/portfolio-design'
@@ -44,7 +44,7 @@ const HeroCarousel = () => {
       {
         id: 4,
         image: '/Images/herocarousel-2.avif', 
-        italicText: 'Master of Architecture',
+        italicText: 'Bachelor of Architecture',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
         path: '/portfolio-design'
@@ -52,7 +52,7 @@ const HeroCarousel = () => {
     {
         id: 5,
         image: '/Images/herocarousel-2.avif', 
-        italicText: 'Foreign Portfolio',
+        italicText: 'Bachelor of Fine Arts',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
         path: '/portfolio-design'

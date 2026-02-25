@@ -73,10 +73,14 @@ export default function RegisterPage() {
           <div className="social">
             <h4>Social Media</h4>
             <div className="icons">
-              <Facebook size={18} />
+              <a href="https://www.facebook.com/TheRenaissance2010?mibextid=wwXIfr&rdid=FqAjLyqj7DiQOEY7&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ASQdJeZ2a%2F%3Fmibextid%3DwwXIfr#" target="_blank" rel="noopener noreferrer">
+                <Facebook size={18} />
+              </a>
               <Twitter size={18} />
               <Linkedin size={18} />
-              <Instagram size={18} />
+              <a href="https://www.instagram.com/therenaissanceindia?utm_source=qr&igsh=Z3RhMXJjbXpnbHBp" target="_blank" rel="noopener noreferrer">
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
         </div>

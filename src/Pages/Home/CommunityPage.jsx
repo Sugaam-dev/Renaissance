@@ -26,7 +26,7 @@ const CommunityPage = () => {
         <button 
           className="cp-follow-button" 
           type="button"
-          onClick={() => console.log('Follow clicked')}
+          onClick={() => window.open('https://www.instagram.com/therenaissanceindia?utm_source=qr&igsh=Z3RhMXJjbXpnbHBp', '_blank')}
         >
           Follow Us
         </button>

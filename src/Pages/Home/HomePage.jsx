@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import './HomePage.css';
 
 const HeroCarousel = lazy(() => import('./HeroCarousel'));
-const FeaturesSection = lazy(() => import('../../components/FeaturesSection'));
+const FeaturesSection = lazy(() => import('./FeaturesSection'));
 const GuidanceSection = lazy(() => import('./GuidanceSection'));
 const DesignStudio = lazy(() => import('./DesignStudio'));
 const Testimonial = lazy(() => import('./Testimonial'));

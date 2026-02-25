@@ -61,9 +61,9 @@ import './FeaturesSection.css';
 const FeaturesSection = () => {
   const candidates = [
     { name: "Sarthak Lanjewar", img: "/Images/candidate-1.avif" },
-    { name: "Dan Mitchell", img: "/Images/candidate-1.avif" }, 
-    { name: "Noah Patterson", img: "/Images/candidate-1.avif" },
-    { name: "Tess Anderson", img: "/Images/candidate-1.avif" },
+    { name: "Dan Mitchell", img: "/Images/candidate-2.avif" }, 
+    { name: "Noah Patterson", img: "/Images/candidate-3.avif" },
+    { name: "Tess Anderson", img: "/Images/candidate-4.avif" },
   ];
 
   return (

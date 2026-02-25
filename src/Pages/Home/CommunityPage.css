@@ -1,5 +1,3 @@
-/* Unique prefix 'cp-' for Community Page */
-
 .cp-wrapper {
   width: 100%;
   background-color: #f8f8f8;
@@ -8,10 +6,9 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Inter', -apple-system, sans-serif;
-  overflow: hidden; /* Prevents scrollbars during animation */
+  overflow: hidden;
 }
 
-/* Base Animation: Slide from bottom (30px) to original position */
 @keyframes cpSlideUp {
   from {
     opacity: 0;
@@ -24,7 +21,7 @@
 }
 
 .cp-main-title {
-  font-size: 32px; /* Reduced from 48px */
+  font-size: 32px;
   font-weight: 800;
   color: #1a1a1a;
   margin-bottom: 32px;
@@ -38,32 +35,30 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
-  /* Staggered delay: appears shortly after the title */
   animation: cpSlideUp 0.8s ease 0.2s forwards;
-  opacity: 0; /* Starts hidden until animation kicks in */
+  opacity: 0;
 }
 
 .cp-brand-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-.cp-logo-circle {
-  width: 48px; /* Reduced from 60px */
-  height: 48px; /* Reduced from 60px */
-  border-radius: 50%;
-  background: radial-gradient(circle at top right, #ffb347, #ffcc33, #12c2e9, #c471ed, #f64f59);
+/* Container for your logo image */
+.cp-logo-container {
+  width: 50px; 
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cp-logo-symbol {
-  color: #fff;
-  font-weight: 900;
-  font-size: 18px; /* Reduced from 24px */
-  font-style: italic;
+.cp-brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the logo isn't stretched */
+  border-radius: 50%; /* Optional: keeps it circular if your logo is square */
 }
 
 .cp-text-meta {
@@ -72,14 +67,14 @@
 }
 
 .cp-brand-name {
-  font-size: 16px; /* Reduced from 20px */
+  font-size: 16px;
   font-weight: 700;
   color: #000;
   line-height: 1.1;
 }
 
 .cp-post-count {
-  font-size: 13px; /* Reduced from 15px */
+  font-size: 13px;
   color: #9ca3af;
   margin-top: 2px;
 }
@@ -94,10 +89,10 @@
   background-color: #000;
   color: #fff;
   border: none;
-  padding: 10px 28px; /* Reduced padding */
+  padding: 10px 28px;
   border-radius: 9999px;
   font-weight: 700;
-  font-size: 13px; /* Reduced from 15px */
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -110,20 +105,30 @@
 /* --- Responsive Layout --- */
 @media (max-width: 640px) {
   .cp-main-title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
-  .cp-content-row {
+  .cp-brand-name {
+  font-size: 14px;
+  }
+
+  .cp-follow-button {
+    padding: 8px 24px;
+    font-size: 12px;
+  }
+
+  /* .cp-content-row {
     flex-direction: column;
     gap: 20px;
-  }
+  } */
 
   .cp-vertical-divider {
-    display: none;
+    display: none; /* Hide on mobile to stack elements cleanly */
   }
 
-  .cp-brand-group {
+  /* .cp-brand-group {
     flex-direction: column;
     text-align: center;
-  }
+    gap: 10px;
+  } */
 }

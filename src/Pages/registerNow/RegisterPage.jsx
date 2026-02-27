@@ -6,7 +6,7 @@ import {
   Instagram,
 } from "lucide-react";
 import "./RegisterPage.css";
-import Map from "../../components/Map";
+import BranchesCard from "../../components/BranchesCard";
 
 export default function RegisterPage() {
   const [result, setResult] = useState("");
@@ -136,7 +136,7 @@ export default function RegisterPage() {
         <div className="bottom-separator"></div>
       </div>
 
-      <Map />
+      <BranchesCard />
     </div>
   );
 }

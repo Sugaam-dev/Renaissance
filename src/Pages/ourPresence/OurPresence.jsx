@@ -6,6 +6,7 @@ import {
   Building2,
 } from "lucide-react";
 import "./OurPresence.css";
+import BranchesCard from "../../components/BranchesCard";
 
 export default function OurPresence() {
   const bannerImage =
@@ -81,19 +82,8 @@ export default function OurPresence() {
         </div>
       </div>
 
-      {/* Map Section */}
-      <div className="presence-map">
-        <h2>Find Us Here</h2>
-
-        <div className="map-container">
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps?q=Mumbai,India&output=embed"
-            loading="lazy"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
+      {/* Branches Section */}
+      <BranchesCard />
     </div>
   );
 }

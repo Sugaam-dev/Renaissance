@@ -1,0 +1,170 @@
+.branches-wrapper {
+  width: 85%;
+  max-width: 1400px;
+  margin: 60px auto;
+}
+
+.branches-title {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.branch-card {
+  border-radius: 8px;
+  padding: 25px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+}
+
+.branch-header {
+  margin-bottom: 15px;
+}
+
+.branch-header h3 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.branch-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.branch-info {
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.branch-address {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.branch-contact {
+  margin-top: 15px;
+}
+
+.branch-phone {
+  margin: 4px 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.branch-email {
+  margin: 4px 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.branch-map {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.branch-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.branch-map-link {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.branch-map-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .branches-wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .branches-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .branches-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .branch-card {
+    padding: 20px;
+  }
+
+  .branch-header h3 {
+    font-size: 18px;
+  }
+
+  .branch-map {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .branches-wrapper {
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .branches-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .branch-card {
+    padding: 15px;
+  }
+
+  .branch-header h3 {
+    font-size: 16px;
+  }
+
+  .branch-address {
+    font-size: 12px;
+  }
+
+  .branch-map {
+    height: 100px;
+  }
+}

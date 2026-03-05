@@ -15,21 +15,6 @@
 .map-title:hover {
   letter-spacing: 1px;
 }
-
-.map-container {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -46,4 +31,4 @@
   .map-container {
     height: 250px;
   }
-}
+}  

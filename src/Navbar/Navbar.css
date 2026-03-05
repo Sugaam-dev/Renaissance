@@ -77,6 +77,39 @@
 .purple { background-color: #cbceff; }
 .yellow { background-color: #ffde59; }
 
+/* dropdown for exams */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-flex;     /* ensure wrapper size matches nav pill */
+  align-items: center;      /* vertical center the link inside */
+}
+
+.exam-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 0;
+  min-width: 120px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 6px 16px;
+  font-size: 11px;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
 /* --- RESPONSIVE / HAMBURGER --- */
 .hamburger {
   display: none;
@@ -123,6 +156,5 @@
 .active {
   background-color: #cbceff !important;
   color: #000;
-  transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }

@@ -47,7 +47,7 @@ const HeroCarousel = () => {
         italicText: 'Bachelor of Architecture',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
-        path: '/portfolio-design'
+        path: '/bachelor-of-architecture'
     },
     {
         id: 5,
@@ -55,7 +55,7 @@ const HeroCarousel = () => {
         italicText: 'Bachelor of Fine Arts',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
-        path: '/portfolio-design'
+        path: '/bachelor-of-fine-arts'
     }
   ];
 

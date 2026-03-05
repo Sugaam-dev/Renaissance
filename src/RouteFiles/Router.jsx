@@ -8,6 +8,11 @@ import RegisterPage from '../Pages/registerNow/RegisterPage.jsx';
 import OurPresence from '../Pages/ourPresence/OurPresence.jsx';
 import ExamEnquiry from '../Pages/examEnquiry/ExamEnquiry.jsx';
 import AboutSection from '../Pages/About/AboutSection.jsx';
+import BachelorsOfDesign from '../Pages/Home/BachelorsOfDesign.jsx';
+import MasterOfDesign from '../Pages/Home/MasterOfDesign.jsx';
+import ForeignPortfolio from '../Pages/Home/ForeignPortfolio.jsx';
+import BachelorOfArchitecture from '../Pages/Home/BachelorOfArchitecture.jsx';
+import BachelorOfFineArts from '../Pages/Home/BachelorOfFineArts.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 
 const AppRouter = () => {
@@ -15,9 +20,6 @@ const AppRouter = () => {
     <BrowserRouter>
     <ScrollToTop/>
       <div className="layout-container">
-        
-        
-
         {/* 3. RENDER PAGE-SPECIFIC CONTENT (Routes) */}
         <main className="page-content"> 
           <Navbar />
@@ -32,7 +34,11 @@ const AppRouter = () => {
             <Route path='/our-presence' element={<OurPresence/>}/>
         
                        <Route path='/exam-enquiry' element={<ExamEnquiry/>}/>
-          
+            <Route path='/bachelor-of-design' element={<BachelorsOfDesign/>}/>
+            <Route path='/master-of-design' element={<MasterOfDesign/>}/>
+            <Route path='/portfolio-design' element={<ForeignPortfolio/>}/> 
+            <Route path='/bachelor-of-architecture' element={<BachelorOfArchitecture/>}/>
+            <Route path='/bachelor-of-fine-arts' element={<BachelorOfFineArts/>}/>
           </Routes>
           <Footer />
           {/* Add these inside <Routes> in AppRouter.js */}

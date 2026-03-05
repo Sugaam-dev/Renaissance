@@ -46,8 +46,24 @@ const Footer = () => {
             </ul>
           </div>
           {/* <div className="tr-link-column"><h3>Design Internship Prog</h3></div> */}
-          <div className="tr-link-column"><h3>Our Presence</h3></div>
-          <div className="tr-link-column"><h3>Contact Us</h3></div>
+          <div className="tr-link-column">
+            <h3>Our Presence</h3>
+            <ul>
+              <li><a href="https://www.google.com/maps/search/The+Renaissance+Salunke+Vihar+Pune" target="_blank" rel="noopener noreferrer">Salunke Vihar</a></li>
+              <li><a href="https://www.google.com/maps/search/The+Renaissance+Viman+Nagar+Pune" target="_blank" rel="noopener noreferrer">Viman Nagar</a></li>
+              <li><a href="https://www.google.com/maps/search/The+Renaissance+Aundh+Pune" target="_blank" rel="noopener noreferrer">Aundh</a></li>
+              <li><a href="https://www.google.com/maps/search/The+Renaissance+Kothrud+Pune" target="_blank" rel="noopener noreferrer">Kothrud</a></li>
+              <li><a href="https://www.google.com/maps/search/The+Renaissance+Ghatkia+Bhubaneswar" target="_blank" rel="noopener noreferrer">Ghatkia, Bhubaneswar</a></li>
+              <li><a href="https://www.google.com/maps/search/The+Renaissance+Nerul+Navi+Mumbai" target="_blank" rel="noopener noreferrer">Nerul, Navi Mumbai</a></li>
+            </ul>
+          </div>
+          <div className="tr-link-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>+91-9021071084</li>
+              <li>support@renaissancedesigns.in</li>
+            </ul>
+          </div>
         </div>
       </div>
 

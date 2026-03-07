@@ -19,7 +19,7 @@ const HeroCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: '/Images/herocarousel-1.avif',
+      image: '/Images/BDes.JPG',
       italicText: 'Bachelor of Design',
       title: 'WELCOME TO The RENAISSANCE',
       desc: 'Your one stop to get future ready to crack Design entrance exams',
@@ -27,7 +27,7 @@ const HeroCarousel = () => {
     },
     {
         id: 2,
-        image: '/Images/herocarousel-2.avif', 
+        image: '/Images/MDes.JPG', 
         italicText: 'Master of Design',
         title: 'EXPERT FACULTY GUIDANCE',
         desc: 'Join the premier institute for NID, NIFT, and UCEED preparation',
@@ -35,7 +35,7 @@ const HeroCarousel = () => {
     },
     {
         id: 3,
-        image: '/Images/herocarousel-3.avif', 
+        image: '/Images/ForeignPortfolio.JPG', 
         italicText: 'Foreign Portfolio',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
@@ -43,7 +43,7 @@ const HeroCarousel = () => {
     },
       {
         id: 4,
-        image: '/Images/herocarousel-2.avif', 
+        image: '/Images/BArch.JPG', 
         italicText: 'Bachelor of Architecture',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
@@ -51,7 +51,7 @@ const HeroCarousel = () => {
     },
     {
         id: 5,
-        image: '/Images/herocarousel-2.avif', 
+        image: '/Images/BFA.JPG', 
         italicText: 'Bachelor of Fine Arts',
         title: 'BUILD YOUR IDENTITY',
         desc: 'Crafing unique portfolios that get noticed by top design schools',
@@ -72,7 +72,7 @@ const HeroCarousel = () => {
           <SwiperSlide key={slide.id}>
             <div 
               className="hero-slide-bg" 
-              style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${slide.image})` }}
+              style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url(${slide.image})` }}
             >
               <div className="hero-container">
                 {/* Left Content */}

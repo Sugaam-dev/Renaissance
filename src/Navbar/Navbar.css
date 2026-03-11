@@ -1,14 +1,14 @@
-/* --- RESET & BASE --- */
-
-
 .navbar-main {
   background: #fff;
-  width: 100%;             /* Use 100% instead of 95vw */
-  padding: 10px 20px;      /* Standard side padding */
+  width: 100%;
+  /* Use 100% instead of 95vw */
+  padding: 10px 20px;
+  /* Standard side padding */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-sizing: border-box; /* Crucial: includes padding in width calculation */
+  box-sizing: border-box;
+  /* Crucial: includes padding in width calculation */
 }
 
 .nav-flex-wrapper {
@@ -26,7 +26,8 @@
 }
 
 .brand-logo-img {
-  height: 65px; /* Adjust based on your image aspect ratio */
+  height: 65px;
+  /* Adjust based on your image aspect ratio */
   width: auto;
 }
 
@@ -34,14 +35,16 @@
 .nav-menu-group {
   display: flex;
   align-items: center;
-  flex-grow: 1; /* Occupies all available middle space */
+  flex-grow: 1;
+  /* Occupies all available middle space */
 }
 
 /* MIDDLE ZONE (Centered links) */
 .nav-links-center {
   display: flex;
-  justify-content: center; /* Centers the links inside the available space */
-  flex-grow: 1; 
+  justify-content: center;
+  /* Centers the links inside the available space */
+  flex-grow: 1;
   gap: 6px;
 }
 
@@ -74,14 +77,21 @@
   white-space: nowrap;
 }
 
-.purple { background-color: #cbceff; }
-.yellow { background-color: #ffde59; }
+.purple {
+  background-color: #cbceff;
+}
+
+.yellow {
+  background-color: #ffde59;
+}
 
 /* dropdown for exams */
 .dropdown-wrapper {
   position: relative;
-  display: inline-flex;     /* ensure wrapper size matches nav pill */
-  align-items: center;      /* vertical center the link inside */
+  display: inline-flex;
+  /* ensure wrapper size matches nav pill */
+  align-items: center;
+  /* vertical center the link inside */
 }
 
 .exam-dropdown {
@@ -93,7 +103,7 @@
   border-radius: 6px;
   padding: 8px 0;
   min-width: 120px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -115,7 +125,7 @@
   display: none;
   flex-direction: column;
   /* Aligns the bars to the right so the 'stagger' happens on the left */
-  align-items: flex-end; 
+  align-items: flex-end;
   gap: 5px;
   cursor: pointer;
 }
@@ -123,18 +133,30 @@
 .hamburger span {
   height: 4px;
   background-color: #000;
-  border-radius: 10px; /* Gives the rounded ends shown in your image */
+  border-radius: 10px;
+  /* Gives the rounded ends shown in your image */
   transition: width 0.3s ease;
 }
 
 /* Specific widths to match your screenshot */
-.bar-top { width: 18px; margin-right: 12px; }
-.bar-mid { width: 30px; }
-.bar-bot { width: 18px; }
+.bar-top {
+  width: 18px;
+  margin-right: 12px;
+}
+
+.bar-mid {
+  width: 30px;
+}
+
+.bar-bot {
+  width: 18px;
+}
 
 @media (max-width: 1200px) {
-  .hamburger { display: flex; }
-  
+  .hamburger {
+    display: flex;
+  }
+
   .nav-menu-group {
     display: none;
     flex-direction: column;
@@ -144,17 +166,32 @@
     width: 100%;
     background: white;
     padding: 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .nav-menu-group.is-open { display: flex; }
-  .nav-links-center { flex-direction: column; width: 100%; }
-  .nav-right { width: 100%; justify-content: center; margin-top: 15px; }
-  .pill { width: 100%; text-align: center; }
+  .nav-menu-group.is-open {
+    display: flex;
+  }
+
+  .nav-links-center {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .pill {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .active {
   background-color: #cbceff !important;
   color: #000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

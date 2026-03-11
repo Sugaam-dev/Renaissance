@@ -1,0 +1,165 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.exam-content{
+  max-width:1100px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+.exam-content h2{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:30px;
+}
+
+.exam-content h3{
+  font-size:28px;
+  color:#2f5d9b;
+  margin-top:40px;
+  margin-bottom:10px;
+}
+
+.exam-content p{
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.exam-content ul{
+  padding-left:20px;
+  margin-bottom:20px;
+}
+
+.exam-content li{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.exam-table{
+  margin-top:40px;
+}
+
+/* scroll wrapper for wide tables */
+.table-scroll{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  border:1px solid #ccc;
+  border-radius:6px;
+  background:#fff;
+}
+
+
+/* =========================
+   MAIN MATRIX TABLE
+========================= */
+
+.matrix-table{
+  border-collapse:collapse;
+  width:max-content;
+  min-width:900px;
+  font-size:15px;
+}
+
+
+/* table cells */
+
+.matrix-table th,
+.matrix-table td{
+  border:1px solid #999;
+  padding:10px 14px;
+  text-align:center;
+  white-space:nowrap;
+}
+
+
+/* =========================
+   STICKY HEADERS
+========================= */
+
+/* campus header row */
+
+.matrix-table thead tr:first-child th{
+  position:sticky;
+  top:0;
+  background:#f3f3f3;
+  z-index:4;
+}
+
+/* category header row */
+
+.matrix-table thead tr:nth-child(2) th{
+  position:sticky;
+  top:42px;
+  background:#f3f3f3;
+  z-index:3;
+}
+
+
+/* =========================
+   STICKY FIRST COLUMN
+========================= */
+
+.matrix-table th:first-child,
+.matrix-table td:first-child{
+  position:sticky;
+  left:0;
+  background:white;
+  font-weight:600;
+  z-index:2;
+}
+
+/* intersection cell */
+
+.matrix-table thead tr:first-child th:first-child{
+  z-index:5;
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.matrix-table tbody tr:hover{
+  background:#f9fbff;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+  .exam-content h2{
+    font-size:30px;
+  }
+
+  .exam-content h3{
+    font-size:20px;
+  }
+
+  .exam-content p,
+  .exam-content li{
+    font-size:15px;
+  }
+
+  .matrix-table{
+    min-width:700px;
+    font-size:13px;
+  }
+
+  .matrix-table th,
+  .matrix-table td{
+    padding:8px 10px;
+  }
+
+}

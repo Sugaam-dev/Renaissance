@@ -691,3 +691,10 @@
   width: 98%;
   height: auto;
 }
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}

@@ -292,3 +292,8 @@
     flex-shrink: 0;
   }
 }
+/* @media (max-width:320px) {
+  .fs-cta-text {
+    font-size: 14px; 
+  }
+} */

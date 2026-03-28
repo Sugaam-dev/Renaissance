@@ -6,7 +6,10 @@ export default function ForeignPortfolio() {
   return (
     <div className="fp-page">
       {/* hero/banner with overlay text */}
-      <div className="fp-banner">
+      <div
+  className="fp-banner"
+  style={{ backgroundImage: "url('/Images/ReadMore4.jpg')" }}
+>
         <div className="fp-hero-content">
           <h1 className="fp-hero-title">
             Foreign Portfolio Preparation

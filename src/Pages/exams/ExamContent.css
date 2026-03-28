@@ -163,3 +163,16 @@
   }
 
 }
+
+.purchase-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 14px 28px;
+  background: #f5c84c;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+

@@ -3,7 +3,7 @@
   padding: 40px 5%;
   font-family: 'Arial', sans-serif;
   color: #333;
-  background-color: #fff;
+  background-color: #1f4a64;
   border-top: 1px solid #eee;
 }
 
@@ -72,7 +72,7 @@
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #000;
+  color: white;
 }
 
 .tr-link-column ul {
@@ -85,7 +85,7 @@
   font-size: 14px;
   margin-bottom: 8px;
   cursor: pointer;
-  color: #444;
+  color: white;
 }
 
 .tr-link-column ul li a {
@@ -112,7 +112,7 @@
 
 .tr-footer-bottom p {
   font-size: 13px;
-  color: #666;
+  color: white;
 }
 
 .tr-cta-button {

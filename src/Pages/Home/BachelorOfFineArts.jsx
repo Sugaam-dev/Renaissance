@@ -6,7 +6,10 @@ export default function BachelorOfFineArts() {
   return (
     <div className="bfa-page">
       {/* hero/banner */}
-      <div className="bfa-banner">
+      <div
+  className="bfa-banner"
+  style={{ backgroundImage: "url('/Images/ReadMore2.jpg')" }}
+>
         <div className="bfa-hero-content">
           <h1 className="bfa-hero-title">
             Under Graduate Program<br />Bachelor of Fine Arts (BFA)

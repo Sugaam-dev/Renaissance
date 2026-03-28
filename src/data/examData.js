@@ -78,13 +78,43 @@ const examData = {
   seats:
     "Approximately 900–1,000 seats across all 17 NIFT campuses.",
 
-  facts: [
-    ["Conducting Body", "National Institute of Fashion Technology (NIFT)"],
-    ["Programmes", "M.Des / M.F.M / M.F.Tech (2 years each)"],
-    ["Stages", "Written (GAT/CAT) → GD → PI"],
-    ["Total Approx. Seats", "900–1,000 across 17 campuses"],
-    ["Official Website", "nift.ac.in"]
-  ]
+  tables: [
+    {
+
+headers:[
+"Quick Facts",
+"Details"
+],
+
+rows:[
+
+["Conducting Body","National Institute of Fashion Technology(NIFT)"],
+["Programmes","M.Des/M.F.M/M.F.Tech(2 years each)"],
+["Stages","Written(CAT/GAT)->GD-.PI"],
+["Total Approxx Seats","900-1000 across 17 campuses"],
+["Official Website","nift.ac.in"],
+]
+},
+// {
+// title:"Seat Availability (Master's)",
+
+// headers:[
+// "Programmes",
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National",
+// "Grand Total"
+// ],
+
+// rows:[
+
+// ["Master of Design (M.Des.)",254,21,29,304],
+// ["Master of Fashion Management(M.F.M.)",644,75,67,786],
+// ["Master of Fashion Technology(M.F.Tech.)",136,0,12,148],
+// ["Total",1034,96,108,1238]
+// ]
+// },
+]
 },
 "jee-2": {
   heroTitle: "JEE Main Paper 2",
@@ -241,26 +271,19 @@ const examData = {
 },
 "uceed": {
   heroTitle: "UCEED (B.Des)",
-
   title: "UCEED — Undergraduate Common Entrance Examination for Design",
-
   about:
     "UCEED is a national-level entrance exam conducted by IIT Bombay for admission to the Bachelor of Design (B.Des) programs at top design institutes in India including IIT Bombay, IIT Delhi, IIT Guwahati, IIT Hyderabad, and IIITDM Jabalpur.",
-
   why:
     "The exam evaluates candidates' aptitude in design thinking, visual perception, creativity, analytical ability, and problem-solving. It is ideal for students passionate about careers in design, innovation, and creative industries.",
-
   pattern: [
     "Part A: Computer-based test including numerical answer type, multiple select questions, and MCQs.",
     "Part B: Drawing and design aptitude questions testing visualization and creativity.",
     "The exam evaluates logical reasoning, spatial ability, design thinking and observation skills."
   ],
-
   seats:
     "UCEED seats are distributed across participating IITs and IIITDM Jabalpur.",
-
   tables: [
-
     {
       title: "UCEED B.Des Campuses",
       headers: ["Institute", "Location", "Seats", "Special Features"],
@@ -298,238 +321,238 @@ const examData = {
 
   tables: [
 
-    {
-title: "Seat Availability — Bengaluru | Bhopal | Chennai (Bachelor's)",
+//     {
+// title: "Seat Availability — Bengaluru | Bhopal | Chennai (Bachelor's)",
 
-campusGroups: [
+// campusGroups: [
+// {
+// name: "Bengaluru",
+// columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
+// },
+// {
+// name: "Bhopal",
+// columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "State Domicile", "NRI/Foreign National"]
+// },
+// {
+// name: "Chennai",
+// columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
+// }
+// ],
+
+// rows: [
+
+// ["Fashion Design (FD)",38,5,34,7,3,38,5],
+// ["Leather Design (LD)","", "", "", "", "",38,5],
+// ["Accessory Design (AD)",38,5,34,7,3,38,5],
+// ["Textile Design (TD)",38,5,34,7,3,38,5],
+// ["Knitwear Design (KD)",38,5,34,7,3,38,5],
+// ["Fashion Communication (FC)",38,5,34,7,3,38,5],
+// ["Apparel Production (AP)",38,5,34,7,3,38,5],
+
+// ]
+// },
+
+// {
+// title: "Seat Availability — Daman | Gandhinagar | Hyderabad | Kannur (Bachelor's)",
+
+// campusGroups: [
+
+// {
+// name: "Daman",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Gandhinagar",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Hyderabad",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Kannur",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// }
+
+// ],
+
+// rows: [
+
+// ["Fashion Design (FD)",38,5,"",38,5,38,5,34,7,3],
+// ["Accessory Design (AD)",38,5,"",38,5,38,5,"","",""],
+// ["Textile Design (TD)",34,7,3,38,5,38,5,34,7,3],
+// ["Knitwear Design (KD)",38,5,"",38,5,38,5,34,7,3],
+// ["Fashion Communication (FC)",38,5,"",38,5,38,5,34,7,3],
+// ["Apparel Production (AP)",38,5,"",38,5,38,5,34,7,3]
+
+// ]
+// },
+// {
+// title: "Seat Availability — Kolkata | Mumbai | New Delhi (Bachelor's)",
+
+// campusGroups: [
+
+// {
+// name: "Kolkata",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Mumbai",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "New Delhi",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// }
+
+// ],
+
+// rows: [
+
+// ["Fashion Design (FD)",38,5,38,5,38,5],
+// ["Leather Design (LD)",38,5,"","",38,5],
+// ["Accessory Design (AD)",38,5,38,5,38,5],
+// ["Textile Design (TD)",38,5,38,5,38,5],
+// ["Knitwear Design (KD)",38,5,38,5,"",""],
+// ["Fashion Communication (FC)",38,5,38,5,38,5],
+// ["Apparel Production (AP)",38,5,38,5,38,5]
+
+// ]
+// },
+// {
+// title: "Seat Availability — Patna | Panchkula | Raebareli | Shillong (Bachelor's)",
+
+// campusGroups: [
+
+// {
+// name: "Patna",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Panchkula",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Raebareli",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Shillong",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// }
+
+// ],
+
+// rows:[
+
+// ["Fashion Design (FD)",34,7,3,34,7,3,38,5,34,7,3],
+// ["Accessory Design (AD)",34,7,3,"","", "",38,5,34,7,3],
+// ["Textile Design (TD)",34,7,3,34,7,3,"","",34,7,3],
+// ["Fashion Communication (FC)",34,7,3,34,7,3,38,5,34,7,3],
+// ["Apparel Production (AP)",34,7,3,34,7,3,38,5,"","",""]
+
+// ]
+// },
+// {
+// title:"Seat Availability — Kangra | Jodhpur | Bhubaneswar | Srinagar (Bachelor's)",
+
+// campusGroups:[
+
+// {
+// name: "Kangra",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Jodhpur",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Bhubaneswar",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
+
+// {
+// name: "Srinagar",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile"
+// ]
+// }
+
+// ],
+
+// rows:[
+
+// ["Fashion Design (FD)",34,7,3,34,7,3,34,7,3,34,12],
+// ["Accessory Design (AD)",34,7,3,34,7,3,34,7,3,34,12],
+// ["Textile Design (TD)",34,7,3,34,7,3,34,7,3,34,12],
+// ["Fashion Communication (FC)",34,7,3,34,7,3,34,7,3,34,12],
+// ["Apparel Production (AP)",34,7,3,34,7,3,34,7,3,"",""]
+
+// ]
+// },
 {
-name: "Bengaluru",
-columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
-},
-{
-name: "Bhopal",
-columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "State Domicile", "NRI/Foreign National"]
-},
-{
-name: "Chennai",
-columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
-}
-],
-
-rows: [
-
-["Fashion Design (FD)",38,5,34,7,3,38,5],
-["Leather Design (LD)","", "", "", "", "",38,5],
-["Accessory Design (AD)",38,5,34,7,3,38,5],
-["Textile Design (TD)",38,5,34,7,3,38,5],
-["Knitwear Design (KD)",38,5,34,7,3,38,5],
-["Fashion Communication (FC)",38,5,34,7,3,38,5],
-["Apparel Production (AP)",38,5,34,7,3,38,5],
-
-]
-},
-
-{
-title: "Seat Availability — Daman | Gandhinagar | Hyderabad | Kannur (Bachelor's)",
-
-campusGroups: [
-
-{
-name: "Daman",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Gandhinagar",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Hyderabad",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Kannur",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-}
-
-],
-
-rows: [
-
-["Fashion Design (FD)",38,5,"",38,5,38,5,34,7,3],
-["Accessory Design (AD)",38,5,"",38,5,38,5,"","",""],
-["Textile Design (TD)",34,7,3,38,5,38,5,34,7,3],
-["Knitwear Design (KD)",38,5,"",38,5,38,5,34,7,3],
-["Fashion Communication (FC)",38,5,"",38,5,38,5,34,7,3],
-["Apparel Production (AP)",38,5,"",38,5,38,5,34,7,3]
-
-]
-},
-{
-title: "Seat Availability — Kolkata | Mumbai | New Delhi (Bachelor's)",
-
-campusGroups: [
-
-{
-name: "Kolkata",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Mumbai",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "New Delhi",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-}
-
-],
-
-rows: [
-
-["Fashion Design (FD)",38,5,38,5,38,5],
-["Leather Design (LD)",38,5,"","",38,5],
-["Accessory Design (AD)",38,5,38,5,38,5],
-["Textile Design (TD)",38,5,38,5,38,5],
-["Knitwear Design (KD)",38,5,38,5,"",""],
-["Fashion Communication (FC)",38,5,38,5,38,5],
-["Apparel Production (AP)",38,5,38,5,38,5]
-
-]
-},
-{
-title: "Seat Availability — Patna | Panchkula | Raebareli | Shillong (Bachelor's)",
-
-campusGroups: [
-
-{
-name: "Patna",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Panchkula",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Raebareli",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Shillong",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-}
-
-],
-
-rows:[
-
-["Fashion Design (FD)",34,7,3,34,7,3,38,5,34,7,3],
-["Accessory Design (AD)",34,7,3,"","", "",38,5,34,7,3],
-["Textile Design (TD)",34,7,3,34,7,3,"","",34,7,3],
-["Fashion Communication (FC)",34,7,3,34,7,3,38,5,34,7,3],
-["Apparel Production (AP)",34,7,3,34,7,3,38,5,"","",""]
-
-]
-},
-{
-title:"Seat Availability — Kangra | Jodhpur | Bhubaneswar | Srinagar (Bachelor's)",
-
-campusGroups:[
-
-{
-name: "Kangra",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Jodhpur",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Bhubaneswar",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
-
-{
-name: "Srinagar",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile"
-]
-}
-
-],
-
-rows:[
-
-["Fashion Design (FD)",34,7,3,34,7,3,34,7,3,34,12],
-["Accessory Design (AD)",34,7,3,34,7,3,34,7,3,34,12],
-["Textile Design (TD)",34,7,3,34,7,3,34,7,3,34,12],
-["Fashion Communication (FC)",34,7,3,34,7,3,34,7,3,34,12],
-["Apparel Production (AP)",34,7,3,34,7,3,34,7,3,"",""]
-
-]
-},
-{
-title:"Seat Totals",
+title:"Total Seats",
 
 headers:[
 "Programme",
@@ -550,7 +573,32 @@ rows:[
 ["Apparel Production (AP)",542,49,61,652]
 
 ]
+
+
 },
+// {
+// title:"Seat Availability — NIFT Lateral Entry Admission",
+
+// headers:[
+// "Programmes",
+// "Open,OBC,EWS",
+// "SC",
+// "ST",
+// "NRI",
+// "Grand Total"
+// ],
+
+// rows:[
+// ["Fashion Design (FD)",5,3,19,24,51],
+// ["Leather Design (LD)",3,10,9,15,37],
+// ["Accessory Design (AD)",9,29,39,40,117],
+// ["Textile Design (TD)",15,33,49,37,134],
+// ["Knitwear Design (KD)",1,6,19,18,44],
+// ["Fashion Communication (FC)",3,6,32,21,62],
+// ["Apparel Production (AP)",128,67,50,59,304],
+// ["Total",164,154,217,214,749]
+// ]
+// }
 
 
 
@@ -563,272 +611,314 @@ rows:[
 
 
 
-{
-title: "Seat Availability — Bengaluru | Bhopal | Chennai (Master's)",
+// {
+// title: "Seat Availability — Bengaluru | Bhopal | Chennai (Master's)",
 
-campusGroups: [
-{
-name: "Bengaluru",
-columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
-},
-{
-name: "Bhopal",
-columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "State Domicile", "NRI/Foreign National"]
-},
-{
-name: "Chennai",
-columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
-}
-],
+// campusGroups: [
+// {
+// name: "Bengaluru",
+// columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
+// },
+// {
+// name: "Bhopal",
+// columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "State Domicile", "NRI/Foreign National"]
+// },
+// {
+// name: "Chennai",
+// columns: ["Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))", "NRI/Foreign National"]
+// }
+// ],
 
-rows: [
+// rows: [
 
-["Master of Design (M.Des.)",38,5,"","","","",""],
-["Master of Fashion Management(M.F.M.)",38, 5, 34, 7, 3, 38, 5],
-["Master of Fashion Technology(M.F.Tech.)",34,3,"","","",34,3],
-]
-},
+// ["Master of Design (M.Des.)",38,5,"","","","",""],
+// ["Master of Fashion Management(M.F.M.)",38, 5, 34, 7, 3, 38, 5],
+// ["Master of Fashion Technology(M.F.Tech.)",34,3,"","","",34,3],
+// ]
+// },
 
-{
-title: "Seat Availability — Daman | Gandhinagar | Hyderabad | Kannur (Master's)",
+// {
+// title: "Seat Availability — Daman | Gandhinagar | Hyderabad | Kannur (Master's)",
 
-campusGroups: [
+// campusGroups: [
 
-{
-name: "Daman",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Daman",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Gandhinagar",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Gandhinagar",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Hyderabad",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Hyderabad",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Kannur",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-}
+// {
+// name: "Kannur",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// }
 
-],
+// ],
 
-rows: [
-["Master of Design (M.Des.)","","","",38,5,"","",34,7,3],
-["Master of Fashion Management(M.F.M.)",34, 7, 3, 38, 5,38,5,34,7,3],
-["Master of Fashion Technology(M.F.Tech.)","","","",34,3,"","","","",""],
+// rows: [
+// ["Master of Design (M.Des.)","","","",38,5,"","",34,7,3],
+// ["Master of Fashion Management(M.F.M.)",34, 7, 3, 38, 5,38,5,34,7,3],
+// ["Master of Fashion Technology(M.F.Tech.)","","","",34,3,"","","","",""],
 
-]
-},
-{
-title: "Seat Availability — Kolkata | Mumbai | New Delhi (Master's)",
+// ]
+// },
+// {
+// title: "Seat Availability — Kolkata | Mumbai | New Delhi (Master's)",
 
-campusGroups: [
+// campusGroups: [
 
-{
-name: "Kolkata",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Kolkata",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Mumbai",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Mumbai",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "New Delhi",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-}
+// {
+// name: "New Delhi",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// }
 
-],
+// ],
 
-rows: [
-["Master of Design (M.Des.)","","",38,5,38,5],
-["Master of Fashion Management(M.F.M.)",38, 5, 38, 5,38,5],
-["Master of Fashion Technology(M.F.Tech.)","","","","",34,3],
+// rows: [
+// ["Master of Design (M.Des.)","","",38,5,38,5],
+// ["Master of Fashion Management(M.F.M.)",38, 5, 38, 5,38,5],
+// ["Master of Fashion Technology(M.F.Tech.)","","","","",34,3],
 
-]
-},
-{
-title: "Seat Availability — Patna | Panchkula | Raebareli | Shillong (Master's)",
+// ]
+// },
+// {
+// title: "Seat Availability — Patna | Panchkula | Raebareli | Shillong (Master's)",
 
-campusGroups: [
+// campusGroups: [
 
-{
-name: "Patna",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Patna",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Panchkula",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Panchkula",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Raebareli",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Raebareli",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Shillong",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-}
+// {
+// name: "Shillong",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// }
 
-],
+// ],
 
-rows:[
-["Master of Design (M.Des.)","","","",34,7,3,"","","","",""],
-["Master of Fashion Management(M.F.M.)",34,7,3,34,7,3,38,5,34,7,3],
-["Master of Fashion Technology(M.F.Tech.)","","","","","","","","","","",""],
+// rows:[
+// ["Master of Design (M.Des.)","","","",34,7,3,"","","","",""],
+// ["Master of Fashion Management(M.F.M.)",34,7,3,34,7,3,38,5,34,7,3],
+// ["Master of Fashion Technology(M.F.Tech.)","","","","","","","","","","",""],
 
-]
-},
-{
-title:"Seat Availability — Kangra | Jodhpur | Bhubaneswar | Srinagar (Master's)",
+// ]
+// },
+// {
+// title:"Seat Availability — Kangra | Jodhpur | Bhubaneswar | Srinagar (Master's)",
 
-campusGroups:[
+// campusGroups:[
 
-{
-name: "Kangra",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Kangra",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Jodhpur",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Jodhpur",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Bhubaneswar",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile",
-"NRI/Foreign National"
-]
-},
+// {
+// name: "Bhubaneswar",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile",
+// "NRI/Foreign National"
+// ]
+// },
 
-{
-name: "Srinagar",
-columns: [
-"Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
-"State Domicile"
-]
-}
+// {
+// name: "Srinagar",
+// columns: [
+// "Open, SC, ST, OBC(NCL), GEN-EWS, PwD (Open, SC, ST, OBC(NCL))",
+// "State Domicile"
+// ]
+// }
 
-],
+// ],
 
-rows:[
-["Master of Design (M.Des.)",34,7,3,"","","","","","","",""],
-["Master of Fashion Management(M.F.M.)",34,7,3,34,7,3,34,7,3,34,12],
-["Master of Fashion Technology(M.F.Tech.)","","","","","","","","","","",""],
+// rows:[
+// ["Master of Design (M.Des.)",34,7,3,"","","","","","","",""],
+// ["Master of Fashion Management(M.F.M.)",34,7,3,34,7,3,34,7,3,34,12],
+// ["Master of Fashion Technology(M.F.Tech.)","","","","","","","","","","",""],
 
-]
-},
-{
-title:"Seat Totals",
+// ]
+// },
+// {
+// title:"Seat Totals",
 
-headers:[
-"Programme",
-"Total Open",
-"Total State",
-"Total NRI",
-"G.Total"
-],
+// headers:[
+// "Programme",
+// "Total Open",
+// "Total State",
+// "Total NRI",
+// "G.Total"
+// ],
 
-rows:[
+// rows:[
 
-["Fashion Design (FD)",610,68,64,742],
-["Leather Design (LD)",152,0,20,172],
-["Accessory Design (AD)",542,54,58,654],
-["Textile Design (TD)",606,75,62,743],
-["Knitwear Design (KD)",296,14,36,346],
-["Fashion Communication (FC)",610,68,64,742],
-["Apparel Production (AP)",542,49,61,652]
+// ["Fashion Design (FD)",610,68,64,742],
+// ["Leather Design (LD)",152,0,20,172],
+// ["Accessory Design (AD)",542,54,58,654],
+// ["Textile Design (TD)",606,75,62,743],
+// ["Knitwear Design (KD)",296,14,36,346],
+// ["Fashion Communication (FC)",610,68,64,742],
+// ["Apparel Production (AP)",542,49,61,652]
 
-]
-},
-
-
-
-
-{
-title:"Seat Availability — NIFT Lateral Entry Admission",
-
-headers:[
-"Programme",
-"Open/OBC/EWS",
-"SC",
-"ST",
-"NRI",
-"Total"
-],
-
-rows:[
-
-["Fashion Design (FD)",5,3,19,24,51],
-["Leather Design (LD)",3,10,9,15,37],
-["Accessory Design (AD)",9,29,39,40,117],
-["Textile Design (TD)",15,33,49,37,134],
-["Knitwear Design (KD)",1,6,19,18,44],
-["Fashion Communication (FC)",3,6,32,21,62],
-["Apparel Production (AP)",128,67,50,59,304],
-["Total",164,94,217,194,749],
-]
-},
+// ]
+// },
 
   ],
 
 
+},
+"bfa": {
+heroTitle: "BFA",
+title: "What Is the MAH AAC CET?",
+about: "If you dream of pursuing a Bachelor of Fine Arts (BFA) at one of Maharashtra's prestigious government art colleges, the MAH AAC CET is your gateway. Standing for Maharashtra Applied Arts and Crafts Common Entrance Test, this is a statewide Art and Design entrance exam conducted by the State Common Entrance Test Cell (State CET Cell), and its primary objective is to streamline admissions into BFA programs offered by Art, Fashion, and Design Colleges in Maharashtra participating in the Centralized Admission Process (CAP).",
+why: "The exam evaluates candidates' creativity, applied art skills, and general knowledge to select students for Fine Arts and Applied Arts undergraduate programs.",
+pattern: [
+"Courses You Can Pursue",
+"Clearing the MAH AAC CET opens doors to a 4-year full-time undergraduate degree in:",
+"Fine Art (Drawing & Painting)",
+"Applied Art",
+"Sculpture",
+"Textile Design",
+"Interior Decoration",
+"Metal Works & Ceramics",
+"Syllabus Breakdown",
+"Paper 1 — Design Practical",
+"Composition & layout",
+"Colour theory & harmonies",
+"Elements of design (line, shape, texture)",
+"Principles of design (balance, rhythm, unity)",
+"Visual communication",
+"Paper 2 — Object Drawing",
+"Still life drawing",
+"Perspective & proportion",
+"Shading & tonal values",
+"Observation & spatial accuracy",
+"Form & volume rendering",
+"Paper 3 — Memory Drawing",
+"Visual recall & imagination",
+"Figures, landscapes, scenes from memory",
+"Composition from imagination",
+"Storytelling through visuals",
+"Creative expression & originality",
+"Paper 4 — General Knowledge",
+"Indian art history & traditions",
+"Famous Indian & international artists",
+"Art movements & styles",
+"Current affairs in art & design",
+"Basic design & craft terminology"
+],
+tables: [
+{
+title: "Exam Pattern — MAH AAC CET (BFA) — Total: 190 marks",
+headers: ["Paper", "Subject", "Type", "Duration", "Marks"],
+rows: [
+["Paper 1","Design Practical","Practical","60 min","50"],
+["Paper 2","Object Drawing Practical","Practical","60 min","50"],
+["Paper 3","Memory Drawing Practical","Practical","60 min","50"],
+["Paper 4","General Knowledge (MCQs)","Theory","40 min","40"],
+["Total","","","","190"]
+]
+},
+{
+title: "Topic Area & Preparation Focus",
+headers: ["Topic Area","Relevant Papers","Preparation Focus"],
+rows: [
+["Composition & Proportion","Paper 1, 2, 3","Highest weightage — practise daily"],
+["Colour Theory","Paper 1, 3","Warm/cool, contrast, harmony"],
+["Perspective & Shading","Paper 2","1-point & 2-point perspective, hatching"],
+["Visual Memory","Paper 3","Observe surroundings, sketch from recall"],
+["Art History & GK","Paper 4","Read NCERT art textbooks, news"]
+]
 }
-};
+],
+facts: [
+["Negative marking","None"],
+["Mode","Offline (Pen & Paper)"],
+["Paper 4 marking","1 mark per MCQ"]
+]
+},
+}
 
 export default examData;

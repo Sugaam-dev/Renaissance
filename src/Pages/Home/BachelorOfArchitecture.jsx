@@ -6,7 +6,10 @@ export default function BachelorOfArchitecture() {
   return (
     <div className="barch-page">
       {/* hero/banner with overlay text */}
-      <div className="barch-banner">
+      <div
+  className="barch-banner"
+  style={{ backgroundImage: "url('/Images/ReadMore1.jpg')" }}
+>
         <div className="barch-hero-content">
           <h1 className="barch-hero-title">
             Under Graduate Program<br />Bachelor of Architecture (B.Arch)

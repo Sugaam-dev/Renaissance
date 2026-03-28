@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ExamHero from "../../components/examPage/ExamHero";
 import examData from "../../data/examData";
 import "./ExamContent.css";
@@ -7,6 +7,7 @@ import "./ExamContent.css";
 const ExamPage = () => {
   const { examId } = useParams();
   const exam = examData[examId];
+  const navigate = useNavigate();
 
   if (!exam) {
     return <h2 style={{ padding: "120px" }}>Exam not found</h2>;
@@ -139,6 +140,13 @@ const ExamPage = () => {
         )}
 
       </section>
+
+      <button
+        className="purchase-btn"
+        onClick={() => navigate(`/pricing?exam=${examId}`)}
+      >
+        PURCHASE NOW
+      </button>
     </div>
   );
 };

@@ -12,21 +12,24 @@ const AboutSection = () => {
           
           <div className="rs-about-body-content">
             <p>
-              The Renaissance is a leading coaching institute in India with over 
-              <strong> 14 years of experience</strong> specializing in Design and 
-              Architecture entrance exam preparation (NATA, JEE-2nd, NID, NIFT, 
-              UCEED, CEED, and International Design Portfolio).
+The Renaissance Design & Architecture Institute stands as one of the oldest and most trusted institutes specializing in design and architecture entrance preparation in India and abroad.
+With a strong track record in exams like NIFT, NID, UCEED, CEED, NATA, JEE (Paper 2), and international design portfolio preparation, the institute has consistently guided students toward top B.Des and M.Des and B.Arch colleges across the world.
+
+
             </p>
             <p>
-              They offer personalized coaching across six centers in Pune and Navi 
-              Mumbai, and one in Bhubneshwar, focusing on developing creative vision 
-              and lateral thinking. With a proven track record of student success, 
-              The Renaissance aims to expand its global reach and continue setting 
-              high standards in design and architecture education. 
-            </p>
-            <p>
-              Their vision is to be a leading global institute that fosters creative 
-              and imaginative minds while promoting sustainable practices.
+              With over<strong> 15 years</strong> of excellence, The Renaissance is widely recognized for its 5-star reviews from aspirants globally, reflecting its commitment to quality education and student success.
+What truly sets The Renaissance apart:
+1. Expert Career Counseling
+Personalized guidance by the founder and experienced team, helping students make informed career choices in design and architecture.
+2. Individual Attention
+A student-centric approach with dedicated mentorship and support available round the clock.
+3. Industry-Experienced Faculty
+Learn from professionals who bring real-world insights into the classroom.
+4. Hands-On Learning Experience
+Engaging workshops and practical sessions designed to build creativity, skills, and confidence in this ever-evolving industry.
+
+At The Renaissance, it’s not just about cracking exams — it’s about shaping future designers and architects with vision, skill, and clarity.
             </p>
           </div>
         </div>

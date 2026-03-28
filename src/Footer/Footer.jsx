@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="tr-brand-section">
           <div className="tr-logo-wrapper">
             {/* The logo now takes full container width to fill the space */}
-            <img src="/Images/logo.avif" alt="Logo" className="tr-footer-logo" />
+            <img src="/Images/Logo.jpeg" alt="Logo" className="tr-footer-logo" />
           </div>
           
           {/* Social icons are now forced below the logo */}

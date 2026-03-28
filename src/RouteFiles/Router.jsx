@@ -15,6 +15,7 @@ import BachelorOfArchitecture from '../Pages/Home/BachelorOfArchitecture.jsx';
 import BachelorOfFineArts from '../Pages/Home/BachelorOfFineArts.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 import ExamPage from "../Pages/exams/ExamPage";
+import PricingPage from "../Pages/PricingPage/PricingPage";
 
 const AppRouter = () => {
   return (
@@ -41,6 +42,7 @@ const AppRouter = () => {
             <Route path='/bachelor-of-architecture' element={<BachelorOfArchitecture/>}/>
             <Route path='/bachelor-of-fine-arts' element={<BachelorOfFineArts/>}/>
             <Route path="/exams/:examId" element={<ExamPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
           </Routes>
           <Footer />
           {/* Add these inside <Routes> in AppRouter.js */}

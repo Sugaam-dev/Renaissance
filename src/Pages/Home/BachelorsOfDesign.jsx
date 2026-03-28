@@ -6,7 +6,10 @@ export default function BachelorsOfDesign() {
   return (
     <div className="bofd-page">
       {/* hero/banner with overlay text */}
-      <div className="bofd-banner">
+      <div
+  className="bofd-banner"
+  style={{ backgroundImage: "url('/Images/ReadMore3.jpg')" }}
+>
         <div className="bofd-hero-content">
           <h1 className="bofd-hero-title">
             Under Graduate Program<br />Bachelor of Design (B.Des)

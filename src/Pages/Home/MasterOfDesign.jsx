@@ -6,7 +6,10 @@ export default function MasterOfDesign() {
   return (
     <div className="mofd-page">
       {/* hero/banner with overlay text */}
-      <div className="mofd-banner">
+      <div
+  className="mofd-banner"
+  style={{ backgroundImage: "url('/Images/ReadMore5.jpg')" }}
+>
         <div className="mofd-hero-content">
           <h1 className="mofd-hero-title">
             Post Graduate Program<br />Master of Design (M.Des)

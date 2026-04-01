@@ -1,13 +1,26 @@
 import { useLocation } from "react-router-dom";
 import examData from "../../data/examData";
 import "./PricingPage.css";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PricingPage = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const selectedExam = query.get("exam");
+  const token = localStorage.getItem("token");
+    if (!token) navigate("/auth");
 
   const exams = Object.keys(examData);
+
+  const navigate = useNavigate();
+
+useEffect(() => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (!isLoggedIn) {
+    navigate("/auth");
+  }
+}, []);
 
   return (
     <div className="pricing-container">

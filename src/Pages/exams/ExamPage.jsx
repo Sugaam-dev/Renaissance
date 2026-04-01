@@ -143,7 +143,7 @@ const ExamPage = () => {
 
       <button
         className="purchase-btn"
-        onClick={() => navigate(`/pricing?exam=${examId}`)}
+        onClick={() => navigate(`/auth?exam=${examId}`)}
       >
         PURCHASE NOW
       </button>

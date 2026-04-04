@@ -17,6 +17,7 @@ import ScrollToTop from '../components/ScrollToTop.jsx';
 import ExamPage from "../Pages/exams/ExamPage";
 import PricingPage from "../Pages/PricingPage/PricingPage";
 import AuthPage from "../Pages/AuthPage/AuthPage";
+import ProtectedRoute from '../components/ProtectedRoute.jsx';
 
 const AppRouter = () => {
   return (
@@ -43,7 +44,14 @@ const AppRouter = () => {
             <Route path='/bachelor-of-architecture' element={<BachelorOfArchitecture/>}/>
             <Route path='/bachelor-of-fine-arts' element={<BachelorOfFineArts/>}/>
             <Route path="/exams/:examId" element={<ExamPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
+            <Route
+  path="/pricing"
+  element={
+    <ProtectedRoute>
+      <PricingPage />
+    </ProtectedRoute>
+  }
+/>
             <Route path="/auth" element={<AuthPage />} />
           </Routes>
           <Footer />

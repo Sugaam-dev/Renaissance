@@ -199,11 +199,14 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./AuthPage.css";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../authSlice";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showForgot, setShowForgot] = useState(false);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const [showOtp, setShowOtp] = useState(false);
   const [otp, setOtp] = useState("");
@@ -326,9 +329,14 @@ const AuthPage = () => {
           throw new Error(data.message || "Login failed");
         }
         console.log("LOGIN RESPONSE:", data);
+        
 
         // save token
-        localStorage.setItem("token", data.token);
+        // localStorage.setItem("token", data.token);
+
+        localStorage.setItem("user", JSON.stringify(data));
+
+        dispatch(setUser(data));
 
         setToast({ message: "Login successful!", type: "success" });
 

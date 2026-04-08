@@ -3,12 +3,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./AuthPage.css";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../authSlice";
+import { useEffect } from "react";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showForgot, setShowForgot] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const [countryCode, setCountryCode] = useState("+91");
 
   const [showOtp, setShowOtp] = useState(false);
   const [otp, setOtp] = useState("");
@@ -32,6 +34,18 @@ const AuthPage = () => {
 
   const query = new URLSearchParams(location.search);
   const exam = query.get("exam");
+
+  useEffect(() => {
+    const step = localStorage.getItem("authStep");
+    if (step=== "otp") {
+      setShowOtp(true);
+    }
+  }, []);
+
+  useEffect(() => {
+  localStorage.setItem("authStep", showOtp ? "otp" : "form");
+}, [showOtp]);
+
 
   // handle input
   const handleChange = (e) => {
@@ -90,7 +104,7 @@ const AuthPage = () => {
               lastName: formData.lastName,
               email: formData.email,
               password: formData.password,
-              phoneNumber: formData.phoneNumber,
+              phoneNumber: countryCode + formData.phoneNumber,
             }),
           }
         );
@@ -99,15 +113,17 @@ const AuthPage = () => {
 
         if (!res.ok) {
           console.log("REGISTER ERROR:", data);
-          throw new Error(data.message || "Registration failed");
+          throw new Error(JSON.stringify(data));
         }
 
-        setToast({ message: "Registered successfully!", type: "success" });
+        setToast({ message: "OTP sent to your email", type: "success" });
 
         setTimeout(() => {
           setToast({ message: "", type: "" });
-          setShowOtp(true);;
-        }, 2000);
+          setShowOtp(true);
+
+          localStorage.setItem("authEmail", formData.email);
+        }, 1500);
       } else {
         // 🔵 LOGIN
         const res = await fetch(
@@ -130,8 +146,8 @@ const AuthPage = () => {
           console.log("LOGIN ERROR:", data);
           throw new Error(data.message || "Login failed");
         }
-        console.log("LOGIN RESPONSE:", data);
-        
+        console.log("FULL LOGIN RESPONSE:", JSON.stringify(data, null, 2));
+
 
         // save token
         // localStorage.setItem("token", data.token);
@@ -146,110 +162,145 @@ const AuthPage = () => {
           navigate(`/pricing?exam=${exam}`);
         }, 1500);
       }
-    } catch (err) {
-      setError(err.message);
-    } finally {
+    }catch (err) {
+      let msg = "";
+      try {
+        const parsed = JSON.parse(err.message);
+        msg = JSON.stringify(parsed).toLowerCase();
+      } catch {
+        msg = err.message?.toLowerCase() || "";
+      }
+
+  console.log("ERROR DETAILS:", err.message);
+  if (!isLogin) {
+    // 🔵 REGISTER ERRORS
+    if (msg.includes("phone")) {
+      setError("Phone number already registered. Please login.");
+    } else if (msg.includes("email") && msg.includes("exists")) {
+      setError("Email already registered. Please login.");
+    } else if (msg.includes("invalid email")) {
+      setError("Invalid email format.");
+    } else {
+      setError("Registration failed. Try different details.");
+    }
+  } else {
+    // 🔵 LOGIN ERRORS
+    if (msg.includes("not found")) {
+      setError("User not found. Please register first.");
+    } else if (msg.includes("password")) {
+      setError("Incorrect password.");
+    } else if (msg.includes("email")) {
+      setError("Invalid email.");
+    } else {
+      setError("Invalid credentials.");
+    }
+  }
+  
+} finally {
       setLoading(false);
     }
   };
 
   const handleVerifyOtp = async () => {
-  try {
-    const res = await fetch(
-      "https://api.sugaam.in/api/auth/verify-otp",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          otp: otp,
-        }),
-      }
-    );
+    try {
+      const res = await fetch(
+        "https://api.sugaam.in/api/auth/verify-otp",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            otp: otp,
+          }),
+        }
+      );
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) throw new Error(data.message || "OTP failed");
+      if (!res.ok) throw new Error(data.message || "OTP failed");
 
-    setToast({ message: "Account verified!", type: "success" });
+      setToast({ message: "Registration successful!", type: "success" });
 
-    setTimeout(() => {
-      setShowOtp(false);
-      setIsLogin(true);
-    }, 1500);
+      setTimeout(() => {
+        localStorage.removeItem("authStep");
+        localStorage.removeItem("authEmail");
 
-  } catch (err) {
-    setError(err.message);
-  }
-};
+        setShowOtp(false);
+        setIsLogin(true);
+      }, 1500);
+
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   const handleForgotPassword = async () => {
-  try {
-    const res = await fetch(
-      "https://api.sugaam.in/api/auth/forgot-password",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: forgotEmail }),
-      }
-    );
+    try {
+      const res = await fetch(
+        "https://api.sugaam.in/api/auth/forgot-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: forgotEmail }),
+        }
+      );
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) throw new Error(data.message || "Failed");
+      if (!res.ok) throw new Error(data.message || "Failed");
 
-    setToast({ message: "OTP sent to your email", type: "success" });
+      setToast({ message: "OTP sent to your email", type: "success" });
 
-    setForgotStep("otp"); // move to next step
-  } catch (err) {
-    setError(err.message);
-  }
-};
+      setForgotStep("otp"); // move to next step
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   const handleResetPassword = async () => {
-  if (newPassword.length < 8) {
-    setError("Password must be at least 8 characters");
-    return;
-  }
+    if (newPassword.length < 8) {
+      setError("Password must be at least 8 characters");
+      return;
+    }
 
-  try {
-    const res = await fetch(
-      "https://api.sugaam.in/api/auth/reset-password",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: forgotEmail,
-          otp: otp,
-          newPassword: newPassword,
-        }),
-      }
-    );
+    try {
+      const res = await fetch(
+        "https://api.sugaam.in/api/auth/reset-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: forgotEmail,
+            otp: otp,
+            newPassword: newPassword,
+          }),
+        }
+      );
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) throw new Error(data.message || "Reset failed");
+      if (!res.ok) throw new Error(data.message || "Reset failed");
 
-    setToast({ message: "Password reset successful!", type: "success" });
+      setToast({ message: "Password reset successful!", type: "success" });
 
-    setTimeout(() => {
-      setShowForgot(false);
-      setForgotStep("email");
-      setOtp("");
-      setNewPassword("");
-      setIsLogin(true);
-    }, 1500);
+      setTimeout(() => {
+        setShowForgot(false);
+        setForgotStep("email");
+        setOtp("");
+        setNewPassword("");
+        setIsLogin(true);
+      }, 1500);
 
-  } catch (err) {
-    setError(err.message);
-  }
-};
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   return (
     <div className="auth-container">
@@ -279,13 +330,24 @@ const AuthPage = () => {
                 onChange={handleChange}
               />
 
-              <input
-                type="text"
-                name="phoneNumber"
-                placeholder="Phone Number"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-              />
+              <div className="phone-input">
+                <select
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                >
+                  <option value="+91">+91</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                </select>
+
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                />
+              </div>
             </>
           )}
 
@@ -312,8 +374,8 @@ const AuthPage = () => {
             {loading
               ? "Please wait..."
               : isLogin
-              ? "Login"
-              : "Register"}
+                ? "Login"
+                : "Register"}
           </button>
         </form>
 
@@ -354,89 +416,89 @@ const AuthPage = () => {
 
       {/* FORGOT PASSWORD MODAL */}
       {showForgot && (
-  <div className="forgot-modal">
-    <div className="forgot-box">
+        <div className="forgot-modal">
+          <div className="forgot-box">
 
-      {forgotStep === "email" ? (
-        <>
-          <h3>Forgot Password</h3>
+            {forgotStep === "email" ? (
+              <>
+                <h3>Forgot Password</h3>
 
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={forgotEmail}
-            onChange={(e) => setForgotEmail(e.target.value)}
-          />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={forgotEmail}
+                  onChange={(e) => setForgotEmail(e.target.value)}
+                />
 
-          <button onClick={handleForgotPassword}>
-            Send OTP
-          </button>
-        </>
-      ) : (
-        <>
-          <h3>Reset Password</h3>
+                <button onClick={handleForgotPassword}>
+                  Send OTP
+                </button>
+              </>
+            ) : (
+              <>
+                <h3>Reset Password</h3>
 
-          <input
-            type="text"
-            placeholder="Enter OTP"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-          />
+                <input
+                  type="text"
+                  placeholder="Enter OTP"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                />
 
-          <input
-            type="password"
-            placeholder="New Password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-          />
+                <input
+                  type="password"
+                  placeholder="New Password"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                />
 
-          <button onClick={handleResetPassword}>
-            Reset Password
-          </button>
-        </>
+                <button onClick={handleResetPassword}>
+                  Reset Password
+                </button>
+              </>
+            )}
+
+            <button
+              className="cancel-btn"
+              onClick={() => {
+                setShowForgot(false);
+                setForgotStep("email");
+              }}
+            >
+              Cancel
+            </button>
+
+          </div>
+        </div>
       )}
 
-      <button
-        className="cancel-btn"
-        onClick={() => {
-          setShowForgot(false);
-          setForgotStep("email");
-        }}
-      >
-        Cancel
-      </button>
-
-    </div>
-  </div>
-)}
-
       {showOtp && (
-  <div className="forgot-modal">
-    <div className="forgot-box">
-      <h3>Verify OTP</h3>
+        <div className="forgot-modal">
+          <div className="forgot-box">
+            <h3>Verify OTP</h3>
 
-      <input
-        type="text"
-        placeholder="Enter OTP"
-        value={otp}
-        onChange={(e) => setOtp(e.target.value)}
-      />
+            <input
+              type="text"
+              placeholder="Enter OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
 
-      <button onClick={handleVerifyOtp}>
-        Verify OTP
-      </button>
+            <button onClick={handleVerifyOtp}>
+              Verify OTP
+            </button>
 
-      <button
-        className="cancel-btn"
-        onClick={() => setShowOtp(false)}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
-)}
+            <button
+              className="cancel-btn"
+              onClick={() => setShowOtp(false)}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
 
-      
+
 
     </div>
   );

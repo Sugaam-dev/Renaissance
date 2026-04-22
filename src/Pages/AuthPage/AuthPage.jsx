@@ -4,11 +4,14 @@ import "./AuthPage.css";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../authSlice";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 const AuthPage = () => {
+  const otpLock = useRef(false);
   const [isLogin, setIsLogin] = useState(true);
   const [showForgot, setShowForgot] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [otpLoading, setOtpLoading] = useState(false);
   const dispatch = useDispatch();
   const [countryCode, setCountryCode] = useState("+91");
 
@@ -201,40 +204,50 @@ const AuthPage = () => {
     }
   };
 
-  const handleVerifyOtp = async () => {
-    try {
-      const res = await fetch(
-        "https://api.sugaam.in/api/auth/verify-otp",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            otp: otp,
-          }),
-        }
-      );
+const handleVerifyOtp = async () => {
+  if (otpLock.current) return; // 🔥 hard block
+  otpLock.current = true;
 
-      const data = await res.json();
+  setOtpLoading(true);
 
-      if (!res.ok) throw new Error(data.message || "OTP failed");
+  try {
+    const res = await fetch(
+      "https://api.sugaam.in/api/auth/verify-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          otp: otp,
+        }),
+      }
+    );
 
-      setToast({ message: "Registration successful!", type: "success" });
+    const data = await res.json();
 
-      setTimeout(() => {
-        localStorage.removeItem("authStep");
-        localStorage.removeItem("authEmail");
+    if (!res.ok) throw new Error(data.message || "OTP failed");
 
-        setShowOtp(false);
-        setIsLogin(true);
-      }, 1500);
+    setToast({ message: "Registration successful!", type: "success" });
 
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+    setTimeout(() => {
+      otpLock.current = false; // reset
+
+      localStorage.removeItem("authStep");
+      localStorage.removeItem("authEmail");
+
+      setShowOtp(false);
+      setIsLogin(true);
+    }, 1500);
+
+  } catch (err) {
+    otpLock.current = false;
+    setError(err.message);
+  } finally {
+    setOtpLoading(false);
+  }
+};
 
   const handleForgotPassword = async () => {
     try {
@@ -484,9 +497,9 @@ const AuthPage = () => {
               onChange={(e) => setOtp(e.target.value)}
             />
 
-            <button onClick={handleVerifyOtp}>
-              Verify OTP
-            </button>
+            <button onClick={handleVerifyOtp} disabled={otpLoading}>
+  {otpLoading ? "Verifying..." : "Verify OTP"}
+</button>
 
             <button
               className="cancel-btn"

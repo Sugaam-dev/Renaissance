@@ -52,7 +52,16 @@ const GuidanceSection = () => {
       {/* Bottom Section: Integrated Purple Banner */}
       <div className="gs-footer-banner">
         <p className="gs-banner-msg">To schedule a Personalized Counseling session register Today!</p>
-        <button className="gs-reg-btn">
+        <button
+          type="button"
+          className="gs-reg-btn"
+          onClick={() => {
+            const phoneNumber = '919021071084';
+            const message = 'Hi, I would like to schedule a counselling call back.';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+          }}
+        >
           GET A CALL BACK <span>&rarr;</span>
         </button>
       </div>

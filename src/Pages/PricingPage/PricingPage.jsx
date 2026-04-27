@@ -30,7 +30,7 @@ const PricingPage = () => {
               <p>Full Course Access</p>
               <h2>₹999</h2>
 
-              <button>Book now</button>
+              <button onClick={()=> navigate("/payment")}>Book now</button>
             </div>
           );
         })}

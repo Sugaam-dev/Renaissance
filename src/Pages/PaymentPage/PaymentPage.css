@@ -1,0 +1,146 @@
+.payment-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.payment-left,
+.payment-right {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* 🔥 Right side box */
+.payment-right {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+/* Payment buttons */
+.payment-methods {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.payment-methods button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.payment-methods .active {
+  background: #fff8cc !important;
+  border: 1px solid #f4d03f !important;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Icons inside input */
+.input-icon {
+  position: relative;
+}
+
+.input-icon .icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: gray;
+}
+
+/* Card logos */
+.card-logos {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.card-logos img {
+  width: 30px;
+}
+
+/* UPI */
+.upi-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.upi-note {
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.features li {
+  margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+  margin-top: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.price-row.discount {
+  color: green;
+}
+
+.price-row.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Button */
+.subscribe-btn {
+  width: 100%;
+  padding: 14px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+  transform: scale(1.03);
+}

@@ -4,7 +4,7 @@ import './WhatsappButton.css';
 
 export default function WhatsappButton() {
   const handleWhatsappClick = () => {
-    const phoneNumber = '919876543210'; 
+    const phoneNumber = '919021071084'; 
     const message = 'Hi, I would like to know more about your services.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

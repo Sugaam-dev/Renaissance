@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import ExamHero from "../../components/examPage/ExamHero";
 import examData from "../../data/examData";
 import "./ExamContent.css";
@@ -8,6 +9,9 @@ const ExamPage = () => {
   const { examId } = useParams();
   const exam = examData[examId];
   const navigate = useNavigate();
+  const storedUser = localStorage.getItem("user");
+  const user = useSelector((state) => state.auth.user) ||
+    (storedUser ? JSON.parse(storedUser) : null);
 
   if (!exam) {
     return <h2 style={{ padding: "120px" }}>Exam not found</h2>;
@@ -143,7 +147,9 @@ const ExamPage = () => {
 
       <button
         className="purchase-btn"
-        onClick={() => navigate(`/auth?exam=${examId}`)}
+        onClick={() =>
+          navigate(user ? `/pricing?exam=${examId}` : `/auth?exam=${examId}`)
+        }
       >
         PURCHASE NOW
       </button>

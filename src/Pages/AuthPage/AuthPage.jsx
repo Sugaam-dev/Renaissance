@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./AuthPage.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../authSlice";
-import { useEffect } from "react";
-import { useRef } from "react";
 
 const AuthPage = () => {
   const otpLock = useRef(false);
@@ -34,16 +32,25 @@ const AuthPage = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const storedUser = localStorage.getItem("user");
+  const authenticatedUser = useSelector((state) => state.auth.user) ||
+    (storedUser ? JSON.parse(storedUser) : null);
 
   const query = new URLSearchParams(location.search);
   const exam = query.get("exam");
 
   useEffect(() => {
     const step = localStorage.getItem("authStep");
-    if (step=== "otp") {
+    if (step === "otp") {
       setShowOtp(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (authenticatedUser) {
+      navigate(exam ? `/pricing?exam=${exam}` : "/pricing");
+    }
+  }, [authenticatedUser, exam, navigate]);
 
   useEffect(() => {
   localStorage.setItem("authStep", showOtp ? "otp" : "form");

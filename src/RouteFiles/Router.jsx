@@ -18,8 +18,6 @@ import ExamPage from "../Pages/exams/ExamPage";
 import PricingPage from "../Pages/PricingPage/PricingPage";
 import AuthPage from "../Pages/AuthPage/AuthPage";
 import ProtectedRoute from '../components/ProtectedRoute.jsx';
-import PaymentPage from '../Pages/PaymentPage/PaymentPage.jsx';
-
 
 const AppRouter = () => {
   return (
@@ -55,7 +53,6 @@ const AppRouter = () => {
   }
 />
             <Route path="/auth" element={<AuthPage />} />
-            <Route path="/payment" element={<PaymentPage />} />
           </Routes>
           
           <Footer />

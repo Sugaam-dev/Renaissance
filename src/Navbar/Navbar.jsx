@@ -1,12 +1,31 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../authSlice";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [examHover, setExamHover] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const storedUser = localStorage.getItem("user");
+  const user = useSelector((state) => state.auth.user) ||
+    (storedUser ? JSON.parse(storedUser) : null);
 
   const closeMenu = () => setIsOpen(false);
+
+  const handleLogout = () => {
+    const confirmLogout = window.confirm(
+      "Are you sure you want to logout? You will need to login again to continue."
+    );
+
+    if (!confirmLogout) return;
+
+    dispatch(logout());
+    localStorage.removeItem("user");
+    navigate("/");
+  };
 
   return (
     <nav className="navbar-main">
@@ -109,6 +128,11 @@ const Navbar = () => {
           </div>
 
           <div className="nav-right">
+            {user && (
+              <button className="pill yellow" onClick={handleLogout}>
+                Logout
+              </button>
+            )}
             <button className="btn-download">
               Download Brochure
             </button>

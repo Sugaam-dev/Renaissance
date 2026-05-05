@@ -1,13 +1,11 @@
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  const user = useSelector((state) => state.auth.user);
-  const storedUser = localStorage.getItem("user");
+  const location = useLocation();
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  // if no user at all → redirect
-  if (!user && !storedUser) {
-    return <Navigate to="/auth" replace />;
+  if (!user) {
+    return <Navigate to="/auth" state={{ from: location }} replace />;
   }
 
   return children;

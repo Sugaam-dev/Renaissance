@@ -1,0 +1,76 @@
+.materials-page {
+  padding: 100px 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.materials-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.materials-header h2 {
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  color: #111;
+}
+
+.materials-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.material-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px 24px;
+  box-shadow: 0 24px 60px rgba(34, 34, 34, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 210px;
+}
+
+.material-card h4 {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #111;
+}
+
+.material-card button {
+  min-width: 160px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+}
+
+.material-card button:hover {
+  transform: translateY(-1px);
+}
+
+.material-card button.primary-button {
+  background: linear-gradient(90deg, #f5c84c 0%, #f2b20f 100%);
+  color: #1a1a1a;
+}
+
+.material-card button.secondary-button {
+  background: #111111;
+  color: #ffffff;
+}
+
+.material-card.locked {
+  opacity: 0.96;
+}
+
+.materials-empty {
+  text-align: center;
+  color: #666;
+  margin-top: 48px;
+  font-size: 1rem;
+}

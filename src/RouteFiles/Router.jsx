@@ -18,6 +18,7 @@ import ExamPage from "../Pages/exams/ExamPage";
 import PricingPage from "../Pages/PricingPage/PricingPage";
 import AuthPage from "../Pages/AuthPage/AuthPage";
 import ProtectedRoute from '../components/ProtectedRoute.jsx';
+import MaterialsPage from '../Pages/MaterialsPage/MaterialsPage.jsx';
 
 const AppRouter = () => {
   return (
@@ -44,15 +45,21 @@ const AppRouter = () => {
             <Route path='/bachelor-of-architecture' element={<BachelorOfArchitecture/>}/>
             <Route path='/bachelor-of-fine-arts' element={<BachelorOfFineArts/>}/>
             <Route path="/exams/:examId" element={<ExamPage />} />
-            <Route
-  path="/pricing"
-  element={
+            <Route path="/pricing" element={
     <ProtectedRoute>
       <PricingPage />
     </ProtectedRoute>
   }
 />
             <Route path="/auth" element={<AuthPage />} />
+            <Route
+  path="/materials"
+  element={
+    <ProtectedRoute>
+      <MaterialsPage />
+    </ProtectedRoute>
+  }
+/>
           </Routes>
           
           <Footer />

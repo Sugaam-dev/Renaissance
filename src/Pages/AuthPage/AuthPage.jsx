@@ -38,6 +38,9 @@ const AuthPage = () => {
 
   const query = new URLSearchParams(location.search);
   const exam = query.get("exam");
+  const redirectPath = location.state?.from
+    ? location.state.from.pathname + location.state.from.search
+    : "/materials";
 
   useEffect(() => {
     const step = localStorage.getItem("authStep");
@@ -47,10 +50,9 @@ const AuthPage = () => {
   }, []);
 
   useEffect(() => {
-    if (authenticatedUser) {
-      navigate(exam ? `/pricing?exam=${exam}` : "/pricing");
-    }
-  }, [authenticatedUser, exam, navigate]);
+    if (!authenticatedUser) return;
+    navigate(redirectPath, { replace: true });
+  }, [authenticatedUser, redirectPath, navigate]);
 
   useEffect(() => {
   localStorage.setItem("authStep", showOtp ? "otp" : "form");
@@ -170,8 +172,8 @@ const AuthPage = () => {
         setToast({ message: "Login successful!", type: "success" });
 
         setTimeout(() => {
-          navigate(`/pricing?exam=${exam}`);
-        }, 1500);
+          navigate(redirectPath, { replace: true });
+        }, 500);
       }
     }catch (err) {
       let msg = "";

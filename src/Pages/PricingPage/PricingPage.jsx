@@ -141,8 +141,8 @@ const PricingPage = () => {
         const pkgData = await pkgRes.json();
         const catData = await catRes.json();
 
-        setPackages(pkgData);
-        setCategories(catData);
+        setPackages(Array.isArray(pkgData) ? pkgData : []);
+        setCategories(Array.isArray(catData) ? catData : []);
       } catch (err) {
         console.error("Error fetching data:", err);
       } finally {

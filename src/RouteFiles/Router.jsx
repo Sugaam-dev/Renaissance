@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import HomePage from '../Pages/Home/HomePage.jsx'; // The new component
 import Navbar from "../Navbar/Navbar";
@@ -22,7 +22,7 @@ import MaterialsPage from '../Pages/MaterialsPage/MaterialsPage.jsx';
 
 const AppRouter = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop/>
       <div className="layout-container">
         {/* 3. RENDER PAGE-SPECIFIC CONTENT (Routes) */}
@@ -71,7 +71,7 @@ const AppRouter = () => {
         {/* 4. RENDER GLOBAL FOOTER */}
         
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

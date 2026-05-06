@@ -193,6 +193,13 @@ const ExamPage = () => {
         );
 
         const data = await res.json();
+
+        if (!Array.isArray(data)) {
+  console.error("Categories API did not return array:", data);
+  setCategories([]);
+  return;
+}
+
         setCategories(data);
       } catch (err) {
         console.error("Error fetching categories:", err);
@@ -212,7 +219,9 @@ const ExamPage = () => {
       .trim();
 
   const normalizedExamId = normalizeText(examId);
-  const selectedCategory = categories.find((cat) => {
+  
+  const safeCategories = Array.isArray(categories) ? categories : [];
+  const selectedCategory = safeCategories.find((cat) => {
     const displayName = normalizeText(cat.displayName);
     const shortName = normalizeText((cat.displayName || "").split(" ")[0]);
 
